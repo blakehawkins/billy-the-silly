@@ -42,7 +42,7 @@ public class ScenariosScreen extends Activity {
     }
 
     public void goScissors(View view){
-        Intent intent = new Intent(this,StartScreen.class);
+        Intent intent = new Intent(this,BaseGameActivity.class);
         startActivity(intent);
     }
     public void goRoad(View view){
