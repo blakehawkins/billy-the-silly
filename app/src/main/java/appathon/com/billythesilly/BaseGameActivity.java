@@ -3,16 +3,19 @@ package appathon.com.billythesilly;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 
 public class BaseGameActivity extends Activity {
 
     private BaseGame _baseGame;
     private OptionView _selectedView;
+    private RadioGroup _stanceRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,27 +23,37 @@ public class BaseGameActivity extends Activity {
         setContentView(R.layout.activity_base_game);
 
         Context context = getBaseContext();
-
         Option[] options = {new Option("A", null, true), new Option("B", null, false), new Option("C", null, true)};
+
         Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true, true), new Slot(3, false, true)};
 
-        _baseGame = new BaseGame(options, slots);
+        Stance[] stances = {new Stance("Sitting", true), new Stance("Standing", false)};
+
+        _baseGame = new BaseGame(options, slots, stances);
 
         // For layout params
-        LinearLayout temp = (LinearLayout) findViewById(R.id.buttonLayout);
-
-        final LinearLayout slotLayout = (LinearLayout) findViewById(R.id.slotLayout);
-
+        LinearLayout temp = (LinearLayout) findViewById(R.id.optionLayout);
         SlotLayout optionLayout = new SlotLayout(context, new Slot(-1, false, false));
-        optionLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        optionLayout.setBackgroundColor(Color.BLUE);
+        optionLayout.setLayoutParams(temp.getLayoutParams());
+        optionLayout.setMinimumHeight(70);
         ((ViewGroup)temp.getParent()).addView(optionLayout);
         ((ViewGroup)temp.getParent()).removeView(temp);
+
+        LinearLayout slotLayout = (LinearLayout) findViewById(R.id.slotLayout);
+
+        _stanceRadioGroup = (RadioGroup) findViewById(R.id.stanceRadioGroup);
+
+        for (int i = 0; i < stances.length; ++i) {
+            StanceRadioButton stance = new StanceRadioButton(context, stances[i]);
+            stance.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            _stanceRadioGroup.addView(stance);
+        }
 
         for (int i = 0; i < options.length; ++i) {
             final OptionView optionView = new OptionView(context, options[i]);
             optionView.unselect();
             optionView.setText(options[i].getOption());
+//            optionView.setBackground(options[i].getImage());
             optionView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -64,7 +77,6 @@ public class BaseGameActivity extends Activity {
         int tempWidth = optionView.getMeasuredWidth();
         int tempHeight = optionView.getMeasuredHeight();
 
-        optionLayout.setMinimumHeight(tempHeight);
         optionLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,12 +117,26 @@ public class BaseGameActivity extends Activity {
         super.onDestroy();
     }
 
-    // Places a view into the top bar implemented with Linear Layout
+    // Places a view into the top bar implemented with SlotLayout
     private void placeViewOnBar(OptionView view, SlotLayout slot) {
 
     }
 
     public void Grade(View view) {
-        Log.e("", "" + _baseGame.grade());
+        boolean correctStance = false;
+        if(_stanceRadioGroup.getChildCount() != 0) {
+            int selectedId = _stanceRadioGroup.getCheckedRadioButtonId();
+            if (selectedId == -1) {
+                correctStance = false;
+            } else {
+                StanceRadioButton stanceButton = (StanceRadioButton) findViewById(selectedId);
+                Stance stance = stanceButton.getStance();
+                correctStance = stance.getIsCorrect();
+            }
+        } else {
+            correctStance = true;
+        }
+        int stars = _baseGame.grade(correctStance);
+        Log.e("", "" + stars);
     }
 }

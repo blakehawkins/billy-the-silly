@@ -15,12 +15,8 @@ public class SlotLayout extends LinearLayout {
 
     public SlotLayout(Context context, Slot slot) {
         super(context);
+        this.setBackgroundResource(R.drawable.sparkle_box);
         _slot = slot;
-        if (_slot.getCorrect()) {
-            this.setBackgroundColor(Color.GREEN);
-        } else {
-            this.setBackgroundColor(Color.RED);
-        }
     }
 
     @Override
