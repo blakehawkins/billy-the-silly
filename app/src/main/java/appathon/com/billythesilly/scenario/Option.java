@@ -1,20 +1,15 @@
 package appathon.com.billythesilly.scenario;
 
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
+/* Created by kamen on 14-11-1. */
 
-/**
- * Created by kamen on 14-11-1.
- */
 public class Option {
     private String _option;
-    private Drawable _image;
+//    private Drawable _image;
     private Boolean _correct;
 
-    public Option(String option, Drawable image, Boolean correct) {
+    public Option(String option, Boolean correct) {
         _option = option;
-        _image = image;
+//        _image = image;
         _correct = correct;
     }
 
@@ -22,9 +17,9 @@ public class Option {
         return _option;
     }
 
-    public Drawable getImage() {
-        return _image;
-    }
+//    public Drawable getImage() {
+//        return _image;
+//    }
 
     public Boolean getCorrect() {
         return _correct;
