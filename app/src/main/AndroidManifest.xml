@@ -14,6 +14,16 @@
         </activity>
         <activity
             android:screenOrientation="landscape"
+            android:name=".ScenariosScreen"
+            android:label="@string/title_activity_scenarios_screen" >
+        </activity>
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".Stats"
+            android:label="@string/title_activity_stats" >
+        </activity>
+        <activity
+            android:screenOrientation="landscape"
             android:name=".BaseGameActivity"
             android:label="@string/title_activity_base_game" >
             <intent-filter>
