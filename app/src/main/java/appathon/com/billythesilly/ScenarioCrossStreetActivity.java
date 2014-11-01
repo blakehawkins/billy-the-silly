@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 public class ScenarioCrossStreetActivity extends Activity {
 
-    private BaseGame _baseGame;
+    private BaseGame _baseGame=null;
     private OptionView _selectedView;
 
     @Override
@@ -39,10 +39,10 @@ public class ScenarioCrossStreetActivity extends Activity {
         //((ViewGroup)temp.getParent()).addView(optionLayout);
         //((ViewGroup)temp.getParent()).removeView(temp);
 
-        for (int i = 0; i < options.length; ++i) {
-            final OptionView optionView = new OptionView(context, options[i]);
+        for(Option opt : options){
+            final OptionView optionView = new OptionView(context, opt);
             optionView.unselect();
-            optionView.setText(options[i].getOption());
+            optionView.setText(opt.getOption());
             optionView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -81,8 +81,8 @@ public class ScenarioCrossStreetActivity extends Activity {
             }
         });
 
-        for (int i = 0; i < slots.length; ++i) {
-            SlotLayout slot = new SlotLayout(context, slots[i]);
+        for(Slot sl : slots){
+            SlotLayout slot = new SlotLayout(context, sl);
             slot.setLayoutParams(new ViewGroup.LayoutParams(tempWidth, tempHeight));
             slot.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -108,10 +108,10 @@ public class ScenarioCrossStreetActivity extends Activity {
         super.onDestroy();
     }
 
-    // Places a view into the top bar implemented with Linear Layout
-    private void placeViewOnBar(OptionView view, SlotLayout slot) {
-
-    }
+    // TODO: Place a view on the top bar
+//    private void placeViewOnBar(OptionView view, SlotLayout slot) {
+//
+//    }
 
     public void Grade(View view) {
         //Log.e("", "" + _baseGame.grade());
