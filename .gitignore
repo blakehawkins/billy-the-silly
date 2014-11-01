@@ -29,3 +29,9 @@ proguard/
 
 # Log Files
 *.log
+
+# modules file
+.idea/modules.xml
+
+# iml files
+app/app.iml
