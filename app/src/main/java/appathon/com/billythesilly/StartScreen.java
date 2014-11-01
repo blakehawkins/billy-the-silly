@@ -36,7 +36,7 @@ public class StartScreen extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void goPlay(View view){
+    public void goGame(View view){
         Intent intent = new Intent(this,ScenariosScreen.class);
         startActivity(intent);
     }
