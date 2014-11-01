@@ -2,8 +2,6 @@ package appathon.com.billythesilly;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,9 +21,11 @@ public class BaseGameActivity extends Activity {
         setContentView(R.layout.activity_base_game);
 
         Context context = getBaseContext();
-        Option[] options = {new Option("A", null, true), new Option("B", null, false), new Option("C", null, true)};
+        Option[] options = {new Option("A", null, true), new Option("B", null, false),
+                new Option("C", null, true)};
 
-        Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true, true), new Slot(3, false, true)};
+        Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true,
+                true), new Slot(3, false, true)};
 
         Stance[] stances = {new Stance("Sitting", true), new Stance("Standing", false)};
 
@@ -36,8 +36,8 @@ public class BaseGameActivity extends Activity {
         SlotLayout optionLayout = new SlotLayout(context, new Slot(-1, false, false));
         optionLayout.setLayoutParams(temp.getLayoutParams());
         optionLayout.setMinimumHeight(70);
-        ((ViewGroup)temp.getParent()).addView(optionLayout);
-        ((ViewGroup)temp.getParent()).removeView(temp);
+        ((ViewGroup) temp.getParent()).addView(optionLayout);
+        ((ViewGroup) temp.getParent()).removeView(temp);
 
         LinearLayout slotLayout = (LinearLayout) findViewById(R.id.slotLayout);
 
@@ -45,7 +45,8 @@ public class BaseGameActivity extends Activity {
 
         for (int i = 0; i < stances.length; ++i) {
             StanceRadioButton stance = new StanceRadioButton(context, stances[i]);
-            stance.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            stance.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams
+                    .WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
             _stanceRadioGroup.addView(stance);
         }
 
@@ -57,7 +58,7 @@ public class BaseGameActivity extends Activity {
             optionView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    OptionView optionView = (OptionView)view;
+                    OptionView optionView = (OptionView) view;
                     if (_selectedView != null) {
                         _selectedView.unselect();
                     }
@@ -80,11 +81,11 @@ public class BaseGameActivity extends Activity {
         optionLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SlotLayout slotLayout = (SlotLayout)view;
-                if(_selectedView == null) {
+                SlotLayout slotLayout = (SlotLayout) view;
+                if (_selectedView == null) {
                     return;
                 }
-                ((ViewGroup)_selectedView.getParent()).removeView(_selectedView);
+                ((ViewGroup) _selectedView.getParent()).removeView(_selectedView);
                 slotLayout.addView(_selectedView);
                 _selectedView.unselect();
                 _selectedView = null;
@@ -97,11 +98,12 @@ public class BaseGameActivity extends Activity {
             slot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    SlotLayout slotLayout = (SlotLayout)view;
-                    if(_selectedView == null || (slotLayout.getChildCount() > 0 && slotLayout.getSlot().getIsSingleSpace())) {
+                    SlotLayout slotLayout = (SlotLayout) view;
+                    if (_selectedView == null || (slotLayout.getChildCount() > 0 && slotLayout
+                            .getSlot().getIsSingleSpace())) {
                         return;
                     }
-                    ((ViewGroup)_selectedView.getParent()).removeView(_selectedView);
+                    ((ViewGroup) _selectedView.getParent()).removeView(_selectedView);
                     slotLayout.addView(_selectedView);
                     _selectedView.unselect();
                     _selectedView = null;
@@ -124,7 +126,7 @@ public class BaseGameActivity extends Activity {
 
     public void Grade(View view) {
         boolean correctStance = false;
-        if(_stanceRadioGroup.getChildCount() != 0) {
+        if (_stanceRadioGroup.getChildCount() != 0) {
             int selectedId = _stanceRadioGroup.getCheckedRadioButtonId();
             if (selectedId == -1) {
                 correctStance = false;
