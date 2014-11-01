@@ -17,9 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity>
-            android:name=".Sats"
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".Stats"
             android:label="@string/title_activity_sats" >
+        </activity>
+        <activity
             android:screenOrientation="landscape"
             android:name=".BaseGameActivity"
             android:label="@string/title_activity_base_game" >
