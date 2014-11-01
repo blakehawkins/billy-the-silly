@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="276.86302"
+     inkscape:cx="170.07731"
      inkscape:cy="657.23469"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,43 +57,57 @@
        d="m 341.43964,322.84552 c -7.73452,2.83992 -7.891,6.43553 -8.56238,9.97978"
        id="path4149"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.89591634px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 341.20307,332.17632 c 10.79583,8.16409 16.85753,5.70652 24.02199,1.02287"
        id="path4153"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.69470417px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 362.30488,322.79793 c 8.21214,2.8903 8.37829,6.54969 9.09112,10.15682"
        id="path4149-5"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <circle
        style="fill:#ffffff;fill-opacity:0.94117647;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4294"
        cx="311.42859"
        cy="285.93362"
-       r="14.285714" />
+       r="14.285714"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <circle
        style="fill:#ffffff;fill-opacity:0.94117647;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4294-7"
        cx="394.28574"
        cy="285.93359"
-       r="14.285714" />
+       r="14.285714"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <circle
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4311"
        cx="320.92856"
        cy="287.00504"
-       r="5.3571429" />
+       r="5.3571429"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <circle
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4311-1"
        cx="404.14285"
        cy="286.64792"
-       r="5.3571429" />
+       r="5.3571429"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#9e4618;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4868"
@@ -102,7 +116,9 @@
        x="219.50781"
        y="306.25122"
        ry="5.3571429"
-       transform="matrix(0.97780768,-0.20950453,0.20950453,0.97780768,0,0)" />
+       transform="matrix(0.97780768,-0.20950453,0.20950453,0.97780768,0,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#9e4618;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4868-5"
@@ -111,6 +127,8 @@
        x="397.45306"
        y="199.41182"
        ry="5.3571429"
-       transform="matrix(0.99252857,0.12201241,-0.12201241,0.99252857,0,0)" />
+       transform="matrix(0.99252857,0.12201241,-0.12201241,0.99252857,0,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>

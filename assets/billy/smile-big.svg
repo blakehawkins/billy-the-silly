@@ -15,7 +15,10 @@
    version="1.1"
    inkscape:version="0.91pre2 r13516"
    viewBox="0 0 744.09448 1052.3622"
-   sodipodi:docname="smile-big.svg">
+   sodipodi:docname="smile-big.svg"
+   inkscape:export-filename="C:\Users\Blake\workspace\billy-the-silly\assets\billy\smile-big.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4889" />
   <sodipodi:namedview
@@ -26,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="164.36528"
+     inkscape:cx="-49.206149"
      inkscape:cy="670.07143"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -44,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
