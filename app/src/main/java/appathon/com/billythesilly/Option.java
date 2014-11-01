@@ -1,5 +1,7 @@
 package appathon.com.billythesilly;
 
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 
 /**
@@ -7,10 +9,10 @@ import android.media.Image;
  */
 public class Option {
     private String _option;
-    private Image _image;
+    private Drawable _image;
     private Boolean _correct;
 
-    public Option(String option, Image image, Boolean correct) {
+    public Option(String option, Drawable image, Boolean correct) {
         _option = option;
         _image = image;
         _correct = correct;
@@ -20,7 +22,7 @@ public class Option {
         return _option;
     }
 
-    public Image getImage() {
+    public Drawable getImage() {
         return _image;
     }
 

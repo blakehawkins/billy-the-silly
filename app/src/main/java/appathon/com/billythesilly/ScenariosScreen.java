@@ -6,12 +6,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.content.Intent;
 
+// Error with page number
 
 public class ScenariosScreen extends Activity {
 
-    String [] arrayButtons = new String[20];
+    String [] arrayButtons = new String[18];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +66,10 @@ public class ScenariosScreen extends Activity {
         Button current2 = (Button) findViewById(R.id.button2);
         Button current3 = (Button) findViewById(R.id.button3);
         int position = findPosition(current1.getText().toString());
-        current1.setText(arrayButtons[(position+3)%20]);
-        current2.setText(arrayButtons[(position+4)%20]);
-        current3.setText(arrayButtons[(position+5)%20]);
+        current1.setText(arrayButtons[(position+3)%18]);
+        current2.setText(arrayButtons[(position+4)%18]);
+        current3.setText(arrayButtons[(position+5)%18]);
+        //setPage(position);
     }
 
     public void goPreviousPage(View view) {
@@ -75,20 +78,28 @@ public class ScenariosScreen extends Activity {
         Button current2 = (Button) findViewById(R.id.button2);
         Button current3 = (Button) findViewById(R.id.button3);
         int position = findPosition(current1.getText().toString());
-        current1.setText(arrayButtons[(position+17)%20]);
-        current2.setText(arrayButtons[(position+18)%20]);
-        current3.setText(arrayButtons[(position+19)%20]);
+        current1.setText(arrayButtons[(position+15)%18]);
+        current2.setText(arrayButtons[(position+16)%18]);
+        current3.setText(arrayButtons[(position+17)%18]);
+        //setPage(position);
     }
 
+    /*public void setPage(int n){
+        TextView page = (TextView) findViewById(R.id.textPage);
+        String s = "Page "+ Integer.toString((n/3)+1);
+        CharSequence num = s;
+        page.setText(num);
+    }*/
+
     public void generateButtonStrings(){
-        for(int i=0; i<20; i++){
+        for(int i=0; i<18; i++){
             arrayButtons[i] = ("Testing Changes " + i);
         }
     }
 
     public int findPosition(String n){
         int position=0;
-        for(int i=0; i<20; i++){
+        for(int i=0; i<18; i++){
             if(arrayButtons[i].equals(n))
                 position = i;
         }
