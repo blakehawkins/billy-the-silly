@@ -26,8 +26,8 @@
             android:label="@string/title_activity_stats"
             android:screenOrientation="landscape"></activity>
         <activity
-            android:name=".scenario.BaseGameActivity"
-            android:label="@string/title_activity_base_game"
+            android:name=".scenario.ScenarioCrossStreetActivity"
+            android:label="@string/title_activity_scenario_cross_street"
             android:screenOrientation="landscape"></activity>
         <activity
             android:name=".ShopActivity"
