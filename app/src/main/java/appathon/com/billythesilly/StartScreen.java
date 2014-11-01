@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+
 public class StartScreen extends Activity {
 
     @Override
@@ -36,11 +37,11 @@ public class StartScreen extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void goPlay(View view){
-        Intent intent = new Intent(this,BaseGameActivity.class);
+        Intent intent = new Intent(this,ScenariosScreen.class);
         startActivity(intent);
     }
     public void goStats(View view){
-        Intent intent = new Intent(this,BaseGameActivity.class);
+        Intent intent = new Intent(this,Stats.class);
         startActivity(intent);
     }
     public void goStore(View view){
