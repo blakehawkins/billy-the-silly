@@ -17,21 +17,20 @@ public class BaseGameActivity extends Activity {
     private OptionView _selectedView;
     private RadioGroup _stanceRadioGroup;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_game);
 
         Context context = getBaseContext();
-        Option[] options = {new Option("A", null, true), new Option("B", null, false),
-                new Option("C", null, true)};
+        Option[] options = {new Option("A", true), new Option("B", false),
+                new Option("C", true)};
 
         Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true,
                 true), new Slot(3, false, true)};
 
         Stance[] stances = {new Stance("Sitting", true), new Stance("Standing", false)};
 
-        _baseGame = new BaseGame(options, slots, stances);
+        _baseGame = new BaseGame(slots);
 
         // For layout params
         LinearLayout temp = (LinearLayout) findViewById(R.id.optionLayout);
@@ -45,14 +44,14 @@ public class BaseGameActivity extends Activity {
 
         _stanceRadioGroup = (RadioGroup) findViewById(R.id.stanceRadioGroup);
 
-        for(Stance s : stances){
+        for (Stance s : stances) {
             StanceRadioButton stance = new StanceRadioButton(context, s);
             stance.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams
                     .WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
             _stanceRadioGroup.addView(stance);
         }
 
-        for(Option opt : options){
+        for (Option opt : options) {
             final OptionView optionView = new OptionView(context, opt);
             optionView.unselect();
             optionView.setText(opt.getOption());
@@ -93,7 +92,7 @@ public class BaseGameActivity extends Activity {
             }
         });
 
-        for(Slot sl : slots){
+        for (Slot sl : slots) {
             SlotLayout slot = new SlotLayout(context, sl);
             slot.setLayoutParams(new ViewGroup.LayoutParams(tempWidth, tempHeight));
             slot.setOnClickListener(new View.OnClickListener() {

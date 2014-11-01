@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="appathon.com.billythesilly" >
+    package="appathon.com.billythesilly">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <activity
             android:name="appathon.com.billythesilly.StartScreen"
             android:label="@string/app_name"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,23 +20,19 @@
         <activity
             android:name="appathon.com.billythesilly.ScenariosScreen"
             android:label="@string/title_activity_scenarios_screen"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name="appathon.com.billythesilly.Stats"
             android:label="@string/title_activity_stats"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".scenario.BaseGameActivity"
             android:label="@string/title_activity_base_game"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".ShopActivity"
             android:label="@string/title_activity_shop"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ import appathon.com.billythesilly.R;
 
 public class ScenarioCrossStreetActivity extends Activity {
 
-    private BaseGame _baseGame=null;
+    private BaseGame _baseGame = null;
     private OptionView _selectedView;
 
     @Override
@@ -22,15 +22,10 @@ public class ScenarioCrossStreetActivity extends Activity {
 
         Context context = getBaseContext();
 
-        Option[] options = {new Option("A", null, true), new Option("B", null, false),
-                new Option("C", null, true)};
+        Option[] options = {new Option("A", true), new Option("B", false),
+                new Option("C", true)};
         Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true,
                 true), new Slot(3, false, true)};
-
-        //_baseGame = new BaseGame(options, slots);
-
-        // For layout params
-        //LinearLayout temp = (LinearLayout) findViewById(R.id.buttonLayout);
 
         final LinearLayout slotLayout = (LinearLayout) findViewById(R.id.slotLayout);
 
@@ -38,10 +33,8 @@ public class ScenarioCrossStreetActivity extends Activity {
         optionLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams
                 .MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         optionLayout.setBackgroundColor(Color.BLUE);
-        //((ViewGroup)temp.getParent()).addView(optionLayout);
-        //((ViewGroup)temp.getParent()).removeView(temp);
 
-        for(Option opt : options){
+        for (Option opt : options) {
             final OptionView optionView = new OptionView(context, opt);
             optionView.unselect();
             optionView.setText(opt.getOption());
@@ -83,7 +76,7 @@ public class ScenarioCrossStreetActivity extends Activity {
             }
         });
 
-        for(Slot sl : slots){
+        for (Slot sl : slots) {
             SlotLayout slot = new SlotLayout(context, sl);
             slot.setLayoutParams(new ViewGroup.LayoutParams(tempWidth, tempHeight));
             slot.setOnClickListener(new View.OnClickListener() {

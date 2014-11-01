@@ -4,22 +4,16 @@ package appathon.com.billythesilly.scenario;
 
 public class Option {
     private String _option;
-//    private Drawable _image;
     private Boolean _correct;
 
     public Option(String option, Boolean correct) {
         _option = option;
-//        _image = image;
         _correct = correct;
     }
 
     public String getOption() {
         return _option;
     }
-
-//    public Drawable getImage() {
-//        return _image;
-//    }
 
     public Boolean getCorrect() {
         return _correct;
