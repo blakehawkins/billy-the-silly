@@ -4,82 +4,68 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="appathon.com.billythesilly.ScenariosScreen">
+    tools:context="appathon.com.billythesilly.ScenariosScreen"
+    android:background="#EFECCA">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp"
+        android:padding="10dp"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Running with Scissors"
+            android:id="@+id/buttonScissors"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            android:typeface="normal"
+            android:textSize="25sp"
+            android:onClick="goScissors"
+            android:textColor="#046380" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crossing the Road"
+            android:id="@+id/buttonRoad"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            android:textSize="25sp"
+            android:onClick="goRoad"
+            android:textColor="#046380" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classroom Actions"
+            android:id="@+id/buttonClassroom"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            android:textSize="25sp"
+            android:onClick="goClassroom"
+            android:textColor="#046380" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Scenarios"
         android:id="@+id/textScenarios"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#002F2F"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="1."
-        android:id="@+id/textOption1"
-        android:layout_toStartOf="@+id/textScenarios"
-        android:layout_marginRight="47dp"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/textScenarios"
-        android:layout_toLeftOf="@+id/textScenarios" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Running with Scissors"
-        android:id="@+id/buttonRunning"
-        android:layout_toEndOf="@+id/textOption1"
-        android:layout_toRightOf="@+id/textOption1"
-        android:layout_alignTop="@+id/textOption1"
-        android:layout_alignLeft="@+id/textOption1"
-        android:layout_alignStart="@+id/textOption1"
-        android:layout_marginLeft="33dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="2."
-        android:id="@+id/textOption2"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textOption1"
-        android:layout_alignStart="@+id/textOption1" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crossing the Road"
-        android:id="@+id/buttonRoad"
-        android:layout_alignTop="@+id/textOption2"
-        android:layout_alignLeft="@+id/buttonRunning"
-        android:layout_alignStart="@+id/buttonRunning"
-        android:layout_alignRight="@+id/buttonRunning"
-        android:layout_alignEnd="@+id/buttonRunning" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="3."
-        android:id="@+id/textView"
-        android:layout_below="@+id/buttonRoad"
-        android:layout_alignLeft="@+id/textOption2"
-        android:layout_alignStart="@+id/textOption2"
-        android:layout_marginTop="24dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Classroom Actions"
-        android:id="@+id/buttonClassroom"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignLeft="@+id/buttonRoad"
-        android:layout_alignStart="@+id/buttonRoad"
-        android:layout_alignRight="@+id/buttonRoad"
-        android:layout_alignEnd="@+id/buttonRoad" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:typeface="monospace" />
 
 </RelativeLayout>
