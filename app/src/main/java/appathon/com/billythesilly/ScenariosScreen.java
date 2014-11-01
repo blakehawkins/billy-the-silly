@@ -45,12 +45,19 @@ public class ScenariosScreen extends Activity {
         Intent intent = new Intent(this,BaseGameActivity.class);
         startActivity(intent);
     }
+
     public void goRoad(View view){
         Intent intent = new Intent(this,StartScreen.class);
         startActivity(intent);
     }
+
     public void goClassroom(View view){
         Intent intent = new Intent(this,StartScreen.class);
         startActivity(intent);
+    }
+
+    public void goNextPage(View view){
+        final Button next = (Button) findViewById(R.id.buttonRoad);
+        next.setText("Testing Changes");
     }
 }
