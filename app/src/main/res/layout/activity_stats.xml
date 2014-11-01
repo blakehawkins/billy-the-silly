@@ -7,7 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="appathon.com.billythesilly.Stats"
-    android:id="@+id/testid">
+    android:id="@+id/Stats">
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Helped Billy:"
+        android:text="Helped Billy: "
         android:id="@+id/HelpedBilly"
         android:layout_toEndOf="@+id/RewardsPic"
         android:layout_centerVertical="true"
@@ -37,8 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Rewards:"
-        android:layout_marginRight="2dp"
+        android:text="Rewards: "
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/GoldenStars"
         android:layout_alignStart="@+id/GoldenStars"
@@ -56,31 +55,32 @@
         android:layout_marginRight="20dp"/>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:id="@+id/Helped"
+        android:src="@drawable/smile"
         android:layout_alignTop="@+id/HelpedBilly"
-        android:layout_toRightOf="@+id/HelpedBilly"
-        android:layout_alignRight="@+id/HelpedBilly"
-        android:layout_alignEnd="@+id/HelpedBilly" />
+        android:layout_toEndOf="@+id/HelpedBilly"
+        android:layout_alignBottom="@+id/HelpedBilly" />
 
     <ImageView
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:id="@+id/RewardsPic"
         android:layout_alignBottom="@+id/Rewards"
-        android:layout_toRightOf="@+id/Rewards"
+        android:layout_toEndOf="@+id/Rewards"
         android:layout_alignTop="@+id/Rewards"
         android:src="@drawable/clothes"/>
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_toRightOf="@+id/StarPic"
+        android:layout_toEndOf="@+id/StarPic"
+        android:max="10"
+        android:progress="2"
         android:indeterminate="false"
-        android:layout_alignTop="@+id/StarPic"
-        android:layout_alignBottom="@+id/Rewards" />
+        android:layout_above="@+id/StarPic"
+        android:layout_toRightOf="@+id/StarPic" />
 
 </RelativeLayout>
