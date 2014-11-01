@@ -51,6 +51,7 @@
         android:src="@drawable/star"
         android:layout_alignTop="@+id/GoldenStars"
         android:layout_toEndOf="@+id/GoldenStars"
+        android:layout_toRightOf="@+id/GoldenStars"
         android:layout_alignBottom="@+id/GoldenStars"
         android:layout_marginRight="20dp"/>
 
@@ -61,6 +62,7 @@
         android:src="@drawable/smile"
         android:layout_alignTop="@+id/HelpedBilly"
         android:layout_toEndOf="@+id/HelpedBilly"
+        android:layout_toRightOf="@+id/GoldenStars"
         android:layout_alignBottom="@+id/HelpedBilly" />
 
     <ImageView
@@ -69,6 +71,7 @@
         android:id="@+id/RewardsPic"
         android:layout_alignBottom="@+id/Rewards"
         android:layout_toEndOf="@+id/Rewards"
+        android:layout_toRightOf="@+id/GoldenStars"
         android:layout_alignTop="@+id/Rewards"
         android:src="@drawable/clothes"/>
 
