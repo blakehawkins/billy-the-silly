@@ -28,7 +28,7 @@
             android:typeface="normal"
             android:textSize="25sp"
             android:onClick="goScissors"
-            android:textColor="#046380" />
+            android:textColor="#737373" />
 
         <Button
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:textSize="25sp"
             android:onClick="goRoad"
-            android:textColor="#046380" />
+            android:textColor="#737373" />
 
         <Button
             android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:textSize="25sp"
             android:onClick="goClassroom"
-            android:textColor="#046380" />
+            android:textColor="#737373" />
 
     </LinearLayout>
 
