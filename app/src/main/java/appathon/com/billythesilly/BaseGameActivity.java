@@ -43,18 +43,17 @@ public class BaseGameActivity extends Activity {
 
         _stanceRadioGroup = (RadioGroup) findViewById(R.id.stanceRadioGroup);
 
-        for (int i = 0; i < stances.length; ++i) {
-            StanceRadioButton stance = new StanceRadioButton(context, stances[i]);
+        for(Stance s : stances){
+            StanceRadioButton stance = new StanceRadioButton(context, s);
             stance.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams
                     .WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
             _stanceRadioGroup.addView(stance);
         }
 
-        for (int i = 0; i < options.length; ++i) {
-            final OptionView optionView = new OptionView(context, options[i]);
+        for(Option opt : options){
+            final OptionView optionView = new OptionView(context, opt);
             optionView.unselect();
-            optionView.setText(options[i].getOption());
-//            optionView.setBackground(options[i].getImage());
+            optionView.setText(opt.getOption());
             optionView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -92,8 +91,8 @@ public class BaseGameActivity extends Activity {
             }
         });
 
-        for (int i = 0; i < slots.length; ++i) {
-            SlotLayout slot = new SlotLayout(context, slots[i]);
+        for(Slot sl : slots){
+            SlotLayout slot = new SlotLayout(context, sl);
             slot.setLayoutParams(new ViewGroup.LayoutParams(tempWidth, tempHeight));
             slot.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -119,13 +118,13 @@ public class BaseGameActivity extends Activity {
         super.onDestroy();
     }
 
-    // Places a view into the top bar implemented with SlotLayout
-    private void placeViewOnBar(OptionView view, SlotLayout slot) {
-
-    }
+    // TODO: Place a slot view in the top bar
+//    private void placeViewOnBar(OptionView view, SlotLayout slot) {
+//
+//    }
 
     public void Grade(View view) {
-        boolean correctStance = false;
+        boolean correctStance;
         if (_stanceRadioGroup.getChildCount() != 0) {
             int selectedId = _stanceRadioGroup.getCheckedRadioButtonId();
             if (selectedId == -1) {
