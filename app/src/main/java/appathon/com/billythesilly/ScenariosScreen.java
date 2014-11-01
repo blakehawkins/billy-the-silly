@@ -1,15 +1,17 @@
 package appathon.com.billythesilly;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.content.Intent;
+// import android.widget.TextView;
 
-// Error with page number
+// Commented Page Number feature
 
 public class ScenariosScreen extends Activity {
 
@@ -69,6 +71,7 @@ public class ScenariosScreen extends Activity {
         current1.setText(arrayButtons[(position+3)%18]);
         current2.setText(arrayButtons[(position+4)%18]);
         current3.setText(arrayButtons[(position+5)%18]);
+        //Line that changes color of text:     current1.setTextColor(Color.BLUE);
         //setPage(position);
     }
 
