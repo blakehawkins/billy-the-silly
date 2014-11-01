@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448"
+   height="1052.3622"
+   id="svg4265"
+   version="1.1"
+   inkscape:version="0.91pre2 r13516"
+   viewBox="0 0 744.09448 1052.3622"
+   sodipodi:docname="eyes-nose.svg">
+  <defs
+     id="defs4267" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="276.86302"
+     inkscape:cy="657.23469"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="848"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4270">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.66829818px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 341.43964,322.84552 c -7.73452,2.83992 -7.891,6.43553 -8.56238,9.97978"
+       id="path4149"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.89591634px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 341.20307,332.17632 c 10.79583,8.16409 16.85753,5.70652 24.02199,1.02287"
+       id="path4153"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.69470417px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 362.30488,322.79793 c 8.21214,2.8903 8.37829,6.54969 9.09112,10.15682"
+       id="path4149-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <circle
+       style="fill:#ffffff;fill-opacity:0.94117647;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4294"
+       cx="311.42859"
+       cy="285.93362"
+       r="14.285714" />
+    <circle
+       style="fill:#ffffff;fill-opacity:0.94117647;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4294-7"
+       cx="394.28574"
+       cy="285.93359"
+       r="14.285714" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4311"
+       cx="320.92856"
+       cy="287.00504"
+       r="5.3571429" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4311-1"
+       cx="404.14285"
+       cy="286.64792"
+       r="5.3571429" />
+    <rect
+       style="fill:#9e4618;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4868"
+       width="57.142857"
+       height="10.714286"
+       x="219.50781"
+       y="306.25122"
+       ry="5.3571429"
+       transform="matrix(0.97780768,-0.20950453,0.20950453,0.97780768,0,0)" />
+    <rect
+       style="fill:#9e4618;fill-opacity:1;stroke:#000000;stroke-width:1.00100005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4868-5"
+       width="57.142857"
+       height="10.714286"
+       x="397.45306"
+       y="199.41182"
+       ry="5.3571429"
+       transform="matrix(0.99252857,0.12201241,-0.12201241,0.99252857,0,0)" />
+  </g>
+</svg>
