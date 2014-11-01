@@ -22,8 +22,11 @@
             android:label="@string/title_activity_scenarios_screen" >
             </activity>
         <activity
-            android:name=".Sats"
+            android:screenOrientation="landscape"
+            android:name=".Stats"
             android:label="@string/title_activity_sats" >
+        </activity>
+        <activity
             android:screenOrientation="landscape"
             android:name=".BaseGameActivity"
             android:label="@string/title_activity_base_game" >
