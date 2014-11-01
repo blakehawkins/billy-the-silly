@@ -11,6 +11,8 @@ import android.content.Intent;
 
 public class ScenariosScreen extends Activity {
 
+    String [] arrayButtons = new String[20];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,23 +43,55 @@ public class ScenariosScreen extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goScissors(View view){
+    public void goButton1(View view){
         Intent intent = new Intent(this,BaseGameActivity.class);
         startActivity(intent);
     }
 
-    public void goRoad(View view){
+    public void goButton2(View view){
         Intent intent = new Intent(this,StartScreen.class);
         startActivity(intent);
     }
 
-    public void goClassroom(View view){
+    public void goButton3(View view){
         Intent intent = new Intent(this,StartScreen.class);
         startActivity(intent);
     }
 
     public void goNextPage(View view){
-        final Button next = (Button) findViewById(R.id.buttonRoad);
-        next.setText("Testing Changes");
+        generateButtonStrings();
+        Button current1 = (Button) findViewById(R.id.button1);
+        Button current2 = (Button) findViewById(R.id.button2);
+        Button current3 = (Button) findViewById(R.id.button3);
+        int position = findPosition(current1.getText().toString());
+        current1.setText(arrayButtons[(position+3)%20]);
+        current2.setText(arrayButtons[(position+4)%20]);
+        current3.setText(arrayButtons[(position+5)%20]);
+    }
+
+    public void goPreviousPage(View view) {
+        generateButtonStrings();
+        Button current1 = (Button) findViewById(R.id.button1);
+        Button current2 = (Button) findViewById(R.id.button2);
+        Button current3 = (Button) findViewById(R.id.button3);
+        int position = findPosition(current1.getText().toString());
+        current1.setText(arrayButtons[(position+17)%20]);
+        current2.setText(arrayButtons[(position+18)%20]);
+        current3.setText(arrayButtons[(position+19)%20]);
+    }
+
+    public void generateButtonStrings(){
+        for(int i=0; i<20; i++){
+            arrayButtons[i] = ("Testing Changes " + i);
+        }
+    }
+
+    public int findPosition(String n){
+        int position=0;
+        for(int i=0; i<20; i++){
+            if(arrayButtons[i].equals(n))
+                position = i;
+        }
+        return position;
     }
 }
