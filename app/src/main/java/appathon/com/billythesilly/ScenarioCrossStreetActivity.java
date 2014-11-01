@@ -24,18 +24,18 @@ public class ScenarioCrossStreetActivity extends Activity {
         Option[] options = {new Option("A", null, true), new Option("B", null, false), new Option("C", null, true)};
         Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true, true), new Slot(3, false, true)};
 
-        _baseGame = new BaseGame(options, slots);
+        //_baseGame = new BaseGame(options, slots);
 
         // For layout params
-        LinearLayout temp = (LinearLayout) findViewById(R.id.buttonLayout);
+        //LinearLayout temp = (LinearLayout) findViewById(R.id.buttonLayout);
 
         final LinearLayout slotLayout = (LinearLayout) findViewById(R.id.slotLayout);
 
         SlotLayout optionLayout = new SlotLayout(context, new Slot(-1, false, false));
         optionLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         optionLayout.setBackgroundColor(Color.BLUE);
-        ((ViewGroup)temp.getParent()).addView(optionLayout);
-        ((ViewGroup)temp.getParent()).removeView(temp);
+        //((ViewGroup)temp.getParent()).addView(optionLayout);
+        //((ViewGroup)temp.getParent()).removeView(temp);
 
         for (int i = 0; i < options.length; ++i) {
             final OptionView optionView = new OptionView(context, options[i]);
@@ -111,6 +111,6 @@ public class ScenarioCrossStreetActivity extends Activity {
     }
 
     public void Grade(View view) {
-        Log.e("", "" + _baseGame.grade());
+        //Log.e("", "" + _baseGame.grade());
     }
 }
