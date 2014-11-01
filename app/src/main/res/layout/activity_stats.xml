@@ -20,7 +20,8 @@
         android:layout_marginTop="31dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#046380"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
         android:layout_toEndOf="@+id/RewardsPic"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/GoldenStars"
-        android:layout_alignStart="@+id/GoldenStars" />
+        android:layout_alignStart="@+id/GoldenStars"
+        android:textColor="#046380"/>
 
     <TextView
         android:id="@+id/Rewards"
@@ -42,7 +44,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/GoldenStars"
         android:layout_alignStart="@+id/GoldenStars"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"
+        android:textColor="#046380"/>
 
 
     <ImageView
@@ -53,8 +56,7 @@
         android:layout_alignTop="@+id/GoldenStars"
         android:layout_toEndOf="@+id/GoldenStars"
         android:layout_toRightOf="@+id/GoldenStars"
-        android:layout_alignBottom="@+id/GoldenStars"
-        android:layout_marginRight="20dp"/>
+        android:layout_alignBottom="@+id/GoldenStars" />
 
     <ImageView
         android:layout_width="25dp"
@@ -64,7 +66,8 @@
         android:layout_alignTop="@+id/HelpedBilly"
         android:layout_toEndOf="@+id/HelpedBilly"
         android:layout_toRightOf="@+id/HelpedBilly"
-        android:layout_alignBottom="@+id/HelpedBilly" />
+        android:layout_alignBottom="@+id/HelpedBilly"
+        android:layout_marginRight="3dp"/>
 
     <ImageView
         android:layout_width="25dp"
@@ -93,8 +96,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/StarsEarned"
         android:layout_alignBottom="@+id/StarPic"
-        android:layout_toRightOf="@+id/Helped"
-        android:layout_toEndOf="@+id/Helped" />
+        android:layout_toRightOf="@+id/StarPic"
+        android:layout_toEndOf="@+id/StarPic"
+        android:textColor="#046380"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,7 +107,8 @@
         android:id="@+id/TimesHelped"
         android:layout_toEndOf="@+id/Helped"
         android:layout_alignBottom="@+id/Helped"
-        android:layout_toRightOf="@+id/Helped" />
+        android:layout_toRightOf="@+id/Helped"
+        android:textColor="#046380"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -112,6 +117,7 @@
         android:id="@+id/RewardsEarned"
         android:layout_toEndOf="@+id/RewardsPic"
         android:layout_alignBottom="@+id/RewardsPic"
-        android:layout_toRightOf="@+id/RewardsPic" />
+        android:layout_toRightOf="@+id/RewardsPic"
+        android:textColor="#046380"/>
 
 </RelativeLayout>
