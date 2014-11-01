@@ -16,30 +16,6 @@ public class ScenariosScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenarios_screen);
 
-        Button option1 = (Button) findViewById(R.id.buttonRunning);
-        Button option2 = (Button) findViewById(R.id.buttonRoad);
-        Button option3 = (Button) findViewById(R.id.buttonClassroom);
-
-        option1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(ScenariosScreen.this, StartScreen.class);
-                ScenariosScreen.this.startActivity(intent);
-            }
-        });
-
-        option2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(ScenariosScreen.this, StartScreen.class);
-                ScenariosScreen.this.startActivity(intent);
-            }
-        });
-
-        option3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(ScenariosScreen.this, StartScreen.class);
-                ScenariosScreen.this.startActivity(intent);
-            }
-        });
     }
 
 
@@ -63,5 +39,25 @@ public class ScenariosScreen extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goScissors(View view){
+        Intent intent = new Intent(this,BaseGameActivity.class);
+        startActivity(intent);
+    }
+
+    public void goRoad(View view){
+        Intent intent = new Intent(this,StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goClassroom(View view){
+        Intent intent = new Intent(this,StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goNextPage(View view){
+        final Button next = (Button) findViewById(R.id.buttonRoad);
+        next.setText("Testing Changes");
     }
 }
