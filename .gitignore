@@ -35,7 +35,3 @@ proguard/
 
 # modules file
 .idea/modules.xml
-
-# iml files
-app/app.iml
-
