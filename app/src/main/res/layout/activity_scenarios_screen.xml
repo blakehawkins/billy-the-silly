@@ -68,4 +68,18 @@
         android:layout_marginTop="37dp"
         android:typeface="monospace" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Page"
+        android:id="@+id/buttonNext"
+        android:layout_gravity="center_horizontal"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:textSize="25sp"
+        android:onClick="goNextPage"
+        android:textColor="#046380"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
