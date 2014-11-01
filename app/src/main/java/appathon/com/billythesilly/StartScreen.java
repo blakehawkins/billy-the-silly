@@ -44,8 +44,8 @@ public class StartScreen extends Activity {
         Intent intent = new Intent(this,Stats.class);
         startActivity(intent);
     }
-    public void goStore(View view){
-        Intent intent = new Intent(this,BaseGameActivity.class);
+    public void goShop(View view){
+        Intent intent = new Intent(this,ShopActivity.class);
         startActivity(intent);
     }
 }

@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
         <activity
-            android:screenOrientation="landscape"
-            android:name=".StartScreen"
-            android:label="@string/app_name" >
+            android:name="appathon.com.billythesilly.StartScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,19 +18,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:screenOrientation="landscape"
-            android:name=".ScenariosScreen"
-            android:label="@string/title_activity_scenarios_screen" >
+            android:name="appathon.com.billythesilly.ScenariosScreen"
+            android:label="@string/title_activity_scenarios_screen"
+            android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:screenOrientation="landscape"
-            android:name=".Stats"
-            android:label="@string/title_activity_stats" >
+            android:name="appathon.com.billythesilly.Stats"
+            android:label="@string/title_activity_stats"
+            android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:screenOrientation="landscape"
-            android:name=".BaseGameActivity"
-            android:label="@string/title_activity_base_game" >
+            android:name="appathon.com.billythesilly.BaseGameActivity"
+            android:label="@string/title_activity_base_game"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ShopActivity"
+            android:label="@string/title_activity_shop"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 
