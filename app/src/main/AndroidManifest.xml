@@ -18,9 +18,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="appathon.com.billythesilly.ScenariosScreen"
+            android:screenOrientation="landscape"
+            android:name=".ScenariosScreen"
             android:label="@string/title_activity_scenarios_screen" >
-            </activity>
+        </activity>
         <activity
             android:screenOrientation="landscape"
             android:name=".Stats"

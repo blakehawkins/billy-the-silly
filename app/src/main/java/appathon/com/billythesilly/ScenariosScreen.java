@@ -22,22 +22,22 @@ public class ScenariosScreen extends Activity {
 
         option1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(this, Scenario1.class);
-                startActivity(intent);
+                Intent intent = new Intent(ScenariosScreen.this, StartScreen.class);
+                ScenariosScreen.this.startActivity(intent);
             }
         });
 
         option2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(this, Scenario2.class);
-                startActivity(intent);
+                Intent intent = new Intent(ScenariosScreen.this, StartScreen.class);
+                ScenariosScreen.this.startActivity(intent);
             }
         });
 
         option3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(this, Scenario3.class);
-                startActivity(intent);
+                Intent intent = new Intent(ScenariosScreen.this, StartScreen.class);
+                ScenariosScreen.this.startActivity(intent);
             }
         });
     }
