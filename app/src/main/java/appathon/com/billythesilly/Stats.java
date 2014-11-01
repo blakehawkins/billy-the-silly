@@ -1,37 +1,51 @@
 package appathon.com.billythesilly;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
 public class Stats extends Activity {
-    private int rewardsTotal,timesTotal,starsTotal;
+    private int rewardsTotal,timesTotal,starsTotal, progressStatus;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        rewardsTotal = timesTotal = starsTotal = 0;
+        timesTotal = starsTotal = progressStatus =0;
+        rewardsTotal = 1;
         setContentView(R.layout.activity_stats);
-        ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar);
-        progress.setProgress(0);
-        generateText();
-
+        generateContent();
+        generateBilly();
     }
 
-    public void generateText() {
+    public void generateContent() {
+        // Create Progressbar
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setProgress(progressStatus);
+        // Fill TextFields
         TextView stars = (TextView) this.findViewById(R.id.StarsEarned);
         TextView times = (TextView) this.findViewById(R.id.TimesHelped);
         TextView rewards = (TextView) this.findViewById(R.id.RewardsEarned);
         stars.setText("x " + String.valueOf(starsTotal));
         times.setText("x " + String.valueOf(timesTotal));
         rewards.setText("x " + String.valueOf(rewardsTotal));
+
+        TextView progress = (TextView) this.findViewById(R.id.Progress);
+        progress.setText("Scenarios: " + progressStatus + "/" + progressBar.getMax());
+    }
+
+    public void generateBilly() {
+        if (rewardsTotal > 0) {
+            ImageView currBilly = (ImageView) this.findViewById(R.id.CurrentBilly);
+            currBilly.setImageResource(R.drawable.shopbilly);
+            ImageView arrow = (ImageView) this.findViewById(R.id.Arrow);
+            arrow.setImageResource(R.drawable.arrow);
+        }
     }
 
     @Override
