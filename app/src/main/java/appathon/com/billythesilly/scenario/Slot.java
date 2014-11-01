@@ -1,12 +1,9 @@
-package appathon.com.billythesilly;
-
-import android.util.Log;
+package appathon.com.billythesilly.scenario;
 
 /**
  * Created by kamen on 14-11-1.
  */
 public class Slot {
-    private int _id;
     private boolean _correct;
     private boolean _isSingleSpace;
     private Option[] _options;
@@ -14,7 +11,6 @@ public class Slot {
 
     public Slot(int id, boolean correct, boolean isSingleSpace) {
         N = 0;
-        _id = id;
         _correct = correct;
         _isSingleSpace = isSingleSpace;
         if(_isSingleSpace) {
@@ -36,10 +32,6 @@ public class Slot {
                 return;
             }
         }
-    }
-
-    public int getId() {
-        return _id;
     }
 
     public boolean getCorrect() {

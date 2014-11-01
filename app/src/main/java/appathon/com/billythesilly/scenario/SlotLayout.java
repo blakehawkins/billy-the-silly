@@ -1,10 +1,10 @@
-package appathon.com.billythesilly;
+package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import appathon.com.billythesilly.R;
 
 /**
  * Created by kamen on 14-11-1.
@@ -15,12 +15,8 @@ public class SlotLayout extends LinearLayout {
 
     public SlotLayout(Context context, Slot slot) {
         super(context);
+        this.setBackgroundResource(R.drawable.sparkle_box);
         _slot = slot;
-        if (_slot.getCorrect()) {
-            this.setBackgroundColor(Color.GREEN);
-        } else {
-            this.setBackgroundColor(Color.RED);
-        }
     }
 
     @Override
