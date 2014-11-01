@@ -1,9 +1,8 @@
-package appathon.com.billythesilly;
+package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.Button;
 
 /**

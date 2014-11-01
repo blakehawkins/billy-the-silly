@@ -1,7 +1,6 @@
-package appathon.com.billythesilly;
+package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.widget.RadioButton;
 
 /**

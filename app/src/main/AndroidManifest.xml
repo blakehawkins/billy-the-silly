@@ -28,7 +28,7 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="appathon.com.billythesilly.BaseGameActivity"
+            android:name=".scenario.BaseGameActivity"
             android:label="@string/title_activity_base_game"
             android:screenOrientation="landscape" >
         </activity>

@@ -1,14 +1,14 @@
 package appathon.com.billythesilly;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+
+import appathon.com.billythesilly.scenario.BaseGameActivity;
 // import android.widget.TextView;
 
 // Commented Page Number feature

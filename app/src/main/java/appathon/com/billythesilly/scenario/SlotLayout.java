@@ -1,10 +1,10 @@
-package appathon.com.billythesilly;
+package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import appathon.com.billythesilly.R;
 
 /**
  * Created by kamen on 14-11-1.

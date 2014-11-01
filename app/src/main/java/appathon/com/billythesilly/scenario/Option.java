@@ -1,4 +1,4 @@
-package appathon.com.billythesilly;
+package appathon.com.billythesilly.scenario;
 
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;

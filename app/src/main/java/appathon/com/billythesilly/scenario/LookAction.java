@@ -1,11 +1,6 @@
-package appathon.com.billythesilly;
+package appathon.com.billythesilly.scenario;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 /**
  * Created by Blake on 11/1/2014.
