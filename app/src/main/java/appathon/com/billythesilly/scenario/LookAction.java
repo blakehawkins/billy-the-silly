@@ -14,4 +14,8 @@ public class LookAction extends TopBarAction {
     public LookAction(Context cxt, int maxUses){
         super(cxt, USES_TARGET, maxUses, ICON, DESCRIPTION);
     }
+
+    public String getType(){
+        return "LookAction";
+    }
 }

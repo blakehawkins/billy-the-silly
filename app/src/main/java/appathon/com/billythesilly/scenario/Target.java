@@ -3,16 +3,13 @@ package appathon.com.billythesilly.scenario;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import appathon.com.billythesilly.R;
 
-/**
- * Created by Blake on 11/2/2014.
- */
+/* A target is one of the gold shiny things which you apply actions to */
 public class Target extends RelativeLayout implements Button.OnClickListener {
     int px, py;
     RelativeLayout sparkle;
@@ -20,6 +17,7 @@ public class Target extends RelativeLayout implements Button.OnClickListener {
     Context cxt;
     RelativeLayout spriteRegion;
     ScenarioActivity owner;
+    int lamport=0;
 
     public Target(Context cxt) {
         super(cxt);
@@ -37,13 +35,14 @@ public class Target extends RelativeLayout implements Button.OnClickListener {
         sparkle = new RelativeLayout(cxt);
         ImageView sp = new ImageView(cxt);
         sp.setImageResource(R.drawable.sparkle_box);
-        //sparkle.setPadding(px, py, 0, 0);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(100, 100);
+        sparkle.addView(sp);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout
+                .LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         lp.setMargins(px, py, 0, 0);
         sparkle.setLayoutParams(lp);
         spriteRegion.addView(sparkle);
 
-        sparkle.setOnClickListener(this);
+        sp.setOnClickListener(this);
     }
 
     public void setOverlay(int drawableId) {
@@ -51,27 +50,34 @@ public class Target extends RelativeLayout implements Button.OnClickListener {
             spriteRegion.removeView(overlay);
         }
         overlay = new RelativeLayout(cxt);
-        ImageView ol = new ImageView(cxt);
-        ol.setImageResource(drawableId);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ol.getWidth(),
-                ol.getHeight());
+        Button ol = new Button(cxt);
+        ol.setBackgroundResource(drawableId);
+        ol.setText(owner.getSelectedView().getText());
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout
+                .LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.setMargins(px, py, 0, 0);
+        spriteRegion.addView(overlay);
         overlay.setLayoutParams(lp);
         overlay.addView(ol);
-        //overlay.setPadding(px, py, 0, 0);
-        spriteRegion.addView(overlay);
+
+        ol.setOnClickListener(this);
+    }
+
+    public void setLamport(int q){
+        lamport = q;
+    }
+
+    public int getLamport(){
+        return lamport;
     }
 
     @Override
     public void onClick(View v) {
-        Log.d("ScenarioCrossStreetActivity", "Click!");
         if (owner.getSelectedView() != null) {
             setOverlay(R.drawable.rounded_button);
             owner.associate(owner.getSelectedView(), this);
             owner.getSelectedView().deselect();
             owner.setSelectedView(null);
-            return;
         }
-
     }
 }

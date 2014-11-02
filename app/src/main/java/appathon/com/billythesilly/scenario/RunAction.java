@@ -14,4 +14,8 @@ public class RunAction extends TopBarAction {
     public RunAction(Context cxt, int maxUses){
         super(cxt, USES_TARGET, maxUses, ICON, DESCRIPTION);
     }
+
+    public String getType(){
+        return "RunAction";
+    }
 }

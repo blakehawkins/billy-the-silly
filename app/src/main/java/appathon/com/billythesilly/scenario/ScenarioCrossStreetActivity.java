@@ -9,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import appathon.com.billythesilly.R;
 
@@ -50,7 +51,7 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         TopBarAction[] options = {
                 new LookAction(context, 0),
                 new WalkAction(context, 0),
-                new RunAction (context, 0)};
+                new RunAction(context, 0)};
 
         // put them in the top bar
         for (TopBarAction opt : options) {
@@ -94,7 +95,20 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
 
     public void grade(View view) {
         int stars = 0;
-        Log.e("ScenarioCrossStreetActivity", Integer.toString(stars));
+
+        // don't document this.
+        TreeMap<Integer, Map.Entry<Target, TopBarAction>> sorter = new TreeMap<Integer,
+                Map.Entry<Target, TopBarAction>>();
+        for (Map.Entry<Target, TopBarAction> cursor : getAssociations().entrySet()) {
+            sorter.put(cursor.getKey().getLamport(), cursor);
+        }
+        // just kidding, that sorts the pairs by lamport value
+
+        for (int i : sorter.keySet()) {
+            Log.d("ScenarioCrossStreetActvity", "Lamport: " + String.valueOf(i) + " " + sorter.get(i).getValue().getType());
+        }
+
+        Log.d("ScenarioCrossStreetActivity", Integer.toString(stars));
     }
 
     @Override

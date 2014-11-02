@@ -3,6 +3,7 @@ package appathon.com.billythesilly.scenario;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -19,8 +20,9 @@ import appathon.com.billythesilly.R;
  */
 abstract public class ScenarioActivity extends Activity {
     private ArrayList<Target> targets;
-    private HashMap<TopBarAction, Target> associations = new HashMap<TopBarAction, Target>();
+    private HashMap<Target, TopBarAction> associations = new HashMap<Target, TopBarAction>();
     private TopBarAction _selectedView;
+    private int lamport = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,15 +53,22 @@ abstract public class ScenarioActivity extends Activity {
 
     abstract public void grade(View view);
 
-    protected void associate(TopBarAction tba, Target t){
-        associations.put(tba, t);
+    protected void associate(TopBarAction tba, Target t) {
+        lamport++;
+        t.setLamport(lamport);
+        Log.v("ScenarioActivity", "Associating. Lamport: " + String.valueOf(t.getLamport()));
+        associations.put(t, tba);
     }
 
-    protected TopBarAction getSelectedView(){
+    protected HashMap<Target, TopBarAction> getAssociations() {
+        return associations;
+    }
+
+    protected TopBarAction getSelectedView() {
         return _selectedView;
     }
 
-    protected void setSelectedView(TopBarAction tba){
+    protected void setSelectedView(TopBarAction tba) {
         _selectedView = tba;
     }
 }

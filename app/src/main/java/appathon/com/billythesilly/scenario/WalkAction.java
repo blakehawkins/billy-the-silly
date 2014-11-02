@@ -14,4 +14,8 @@ public class WalkAction extends TopBarAction {
     public WalkAction(Context cxt, int maxUses){
         super(cxt, USES_TARGET, maxUses, ICON, DESCRIPTION);
     }
+
+    public String getType(){
+        return "WalkAction";
+    }
 }
