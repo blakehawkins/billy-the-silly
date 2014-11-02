@@ -11,6 +11,10 @@ public class RunAction extends TopBarAction {
     private static final Drawable ICON = null;
     private static final boolean USES_TARGET = true;
 
+    public RunAction(Context cxt){
+        super(cxt);
+    }
+
     public RunAction(Context cxt, int maxUses){
         super(cxt, USES_TARGET, maxUses, ICON, DESCRIPTION);
     }

@@ -11,7 +11,6 @@ import appathon.com.billythesilly.R;
 /* A target is one of the gold shiny things which you apply actions to */
 public class Target extends RelativeLayout implements Button.OnClickListener {
     private int px, py;
-    private RelativeLayout sparkle;
     private RelativeLayout overlay;
     private Context cxt;
     private RelativeLayout spriteRegion;
@@ -32,7 +31,7 @@ public class Target extends RelativeLayout implements Button.OnClickListener {
         this.py = py;
         this.owner = owner;
 
-        sparkle = new RelativeLayout(cxt);
+        RelativeLayout sparkle = new RelativeLayout(cxt);
         ImageView sp = new ImageView(cxt);
         sp.setImageResource(R.drawable.sparkle_box);
         sparkle.addView(sp);
