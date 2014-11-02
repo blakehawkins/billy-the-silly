@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Storage {
     public static ArrayList<Integer> rewards = new ArrayList<Integer>();
     public static int stars = 0;
-    public static boolean[] levels = { false, false, false,false, false, false,
+    public static boolean[] levels = { false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false, false, false, false};
 
 }
