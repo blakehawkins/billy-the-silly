@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import appathon.com.billythesilly.R;
 
 /* There are two types of games: React and Classify. Reaction games are the games which present
@@ -20,7 +23,6 @@ import appathon.com.billythesilly.R;
  */
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implements View
         .OnClickListener {
-    private TopBarAction _selectedView;
 
     protected void drawSprites(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
@@ -63,15 +65,16 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
 
     protected void initializeTargets(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
+        ArrayList<Target> targets = new ArrayList<Target>();
 
         // left
-        new Target(cxt, spriteRegion, 60, 175);
+        targets.add(new Target(cxt, this, spriteRegion, 60, 175));
 
         // right
-        new Target(cxt, spriteRegion, 550, 175);
+        targets.add(new Target(cxt, this, spriteRegion, 550, 175));
 
         // top
-        new Target(cxt, spriteRegion, 295, 65);
+        targets.add(new Target(cxt, this, spriteRegion, 295, 65));
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,17 +101,17 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
     public void onClick(View view) {
         TopBarAction topBarAction = (TopBarAction) view;
 
-        if (_selectedView != null) {
-            _selectedView.deselect();
+        if (getSelectedView() != null) {
+            getSelectedView().deselect();
         }
 
         if (topBarAction.useTarget()) {
-            if (_selectedView == view) {
-                _selectedView = null;
+            if (getSelectedView() == view) {
+                setSelectedView(null);
                 return;
             }
             topBarAction.select();
-            _selectedView = topBarAction;
+            setSelectedView(topBarAction);
         }
     }
 }
