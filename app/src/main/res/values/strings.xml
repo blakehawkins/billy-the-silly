@@ -7,6 +7,7 @@
     <string name="title_activity_scenarios_screen">ScenariosScreen</string>
     <string name="title_activity_scenario_cross_street">Crossing the Street</string>
     <string name="title_activity_shop">shopActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="scenario_button_done">Done!</string>
     <string name="title_activity_scenarios_screen2">ScenariosScreen2</string>
     <string name="title_activity_scenarios_screen3">ScenariosScreen3</string>
