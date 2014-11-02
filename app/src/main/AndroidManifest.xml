@@ -31,11 +31,9 @@
             android:name="appathon.com.billythesilly.scenario.ReactionScenarioCookieActivity"
             android:label="@string/title_activity_reaction_scenario_cookie"
             android:screenOrientation="landscape" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".scenario.ResultsActivity"
+            android:label="@string/title_activity_results"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 

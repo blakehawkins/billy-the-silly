@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton3"
-                android:src="@drawable/santahat"
+                android:src="@drawable/santa_hat"
                 android:background="#00ffffff"
                 android:onClick="buyItem"
                 android:scaleType="fitCenter"

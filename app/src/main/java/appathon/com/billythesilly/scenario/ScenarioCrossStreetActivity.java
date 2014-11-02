@@ -1,6 +1,7 @@
 package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import appathon.com.billythesilly.R;
 
@@ -23,6 +24,9 @@ import appathon.com.billythesilly.R;
  */
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implements View
         .OnClickListener {
+    private static final int MAP_TAG_LEFT = 1;
+    private static final int MAP_TAG_RIGHT = 2;
+    private static final int MAP_TAG_TOP = 3;
 
     protected void drawSprites(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
@@ -50,7 +54,7 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         TopBarAction[] options = {
                 new LookAction(context, 0),
                 new WalkAction(context, 0),
-                new RunAction (context, 0)};
+                new RunAction(context, 0)};
 
         // put them in the top bar
         for (TopBarAction opt : options) {
@@ -65,16 +69,18 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
 
     protected void initializeTargets(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
-        ArrayList<Target> targets = new ArrayList<Target>();
 
         // left
-        targets.add(new Target(cxt, this, spriteRegion, 60, 175));
+        Target t = new Target(cxt, this, spriteRegion, 60, 175);
+        t.setMapTag(MAP_TAG_LEFT);
 
         // right
-        targets.add(new Target(cxt, this, spriteRegion, 550, 175));
+        t = new Target(cxt, this, spriteRegion, 550, 175);
+        t.setMapTag(MAP_TAG_RIGHT);
 
         // top
-        targets.add(new Target(cxt, this, spriteRegion, 295, 65));
+        t = new Target(cxt, this, spriteRegion, 295, 65);
+        t.setMapTag(MAP_TAG_TOP);
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +98,62 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         super.onDestroy();
     }
 
-    public void grade(View view) {
-        int stars = 0;
-        Log.e("ScenarioCrossStreetActivity", Integer.toString(stars));
+    public int grade(View view) {
+
+        // don't document this.
+        TreeMap<Integer, Map.Entry<Target, TopBarAction>> sorter = new TreeMap<Integer,
+                Map.Entry<Target, TopBarAction>>();
+        for (Map.Entry<Target, TopBarAction> cursor : getAssociations().entrySet()) {
+            sorter.put(cursor.getKey().getLamport(), cursor);
+        }
+        // just kidding, that sorts the pairs by lamport value
+
+        int bits = 0; //0b00
+        // parse the sorted types to check for success
+        for (int i : sorter.keySet()) {
+            Map.Entry<Target, TopBarAction> entry = sorter.get(i);
+            switch (entry.getKey().getMapTag()) {
+                case MAP_TAG_LEFT:
+                    if(!(entry.getValue() instanceof LookAction)){
+                        Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        goToResults(false);
+                        return 0;
+                    }
+                    bits |= 1;
+                    break;
+
+                case MAP_TAG_RIGHT:
+                    if(!(entry.getValue() instanceof LookAction)){
+                        Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        goToResults(false);
+                        return 0;
+                    }
+                    bits |= 2;
+                    break;
+
+                case MAP_TAG_TOP:
+                    if(!(entry.getValue() instanceof WalkAction) || bits < 3){
+                        Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        goToResults(false);
+                        return 0;
+                    }
+                    Log.v("ScenarioCrossStreetActivity", "Success!");
+                    goToResults(true);
+                    break;
+
+                default:
+                    Log.e("ScenarioCrossStreetActivity", "Err! Unrecognized tag");
+                    goToResults(false);
+                    break;
+            }
+        }
+        return 0;
+    }
+
+    public void goToResults(boolean n){
+        Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
+        intent.putExtra("Key1",n);
+        startActivity(intent);
     }
 
     @Override

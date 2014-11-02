@@ -9,7 +9,7 @@ import appathon.com.billythesilly.R;
 /**
  * Created by kamen on 14-11-1.
  */
-public class TopBarAction extends TopBarMember {
+abstract public class TopBarAction extends TopBarMember {
     private boolean useTarget;
     int maxUses;
     Drawable icon;
@@ -41,7 +41,13 @@ public class TopBarAction extends TopBarMember {
         this.setTextColor(Color.BLACK);
     }
 
+    public String getText(){
+        return text;
+    }
+
     public boolean useTarget(){
         return this.useTarget;
     }
+
+    abstract String getType();
 }
