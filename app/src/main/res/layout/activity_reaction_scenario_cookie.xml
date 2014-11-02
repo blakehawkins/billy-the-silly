@@ -23,6 +23,7 @@
         android:id="@+id/MovableCookies"
         android:src="@drawable/cookies"
         android:layout_toStartOf="@+id/BillyHangingCookie"
+        android:layout_toLeftOf="@+id/BillyHangingCookie"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -40,16 +41,16 @@
         android:text="Take"
         android:id="@+id/TakeButton"
         android:onClick="take"
-        android:layout_toStartOf="@+id/GoDownButton"
+        android:layout_toStartOf="@+id/Sit"
         android:layout_marginRight="77dp"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/GoDownButton" />
+        android:layout_toLeftOf="@+id/Sit" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go Down"
-        android:id="@+id/GoDownButton"
+        android:text="Sit Down"
+        android:id="@+id/Sit"
         android:onClick="goDown"
         android:layout_marginRight="141dp"
         android:layout_alignParentTop="true"

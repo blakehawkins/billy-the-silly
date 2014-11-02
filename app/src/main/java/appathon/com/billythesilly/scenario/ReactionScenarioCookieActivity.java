@@ -1,16 +1,18 @@
 package appathon.com.billythesilly.scenario;
 
+import android.content.Context;
 import android.view.View;
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import appathon.com.billythesilly.R;
 
 /**
  * Created by lisaxie on 02/11/2014.
  */
-abstract public class ReactionScenarioCookieActivity extends ReactionScenarioActivity {
+public class ReactionScenarioCookieActivity extends ReactionScenarioActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +21,23 @@ abstract public class ReactionScenarioCookieActivity extends ReactionScenarioAct
 
     }
 
+    protected void initializeTopBarMembers(Context cxt) {
+
+    }
+
+    protected void initializeTargets(Context cxt) {
+    }
+
+    protected void drawSprites(Context cxt) {
+    }
+
+    public void grade(View view) {
+    }
+
     public void goDown(View v) {
         // Change Billy's stance
+        ImageView billy = (ImageView) findViewById(R.id.BillyHangingCookie);
+        billy.setImageResource(R.drawable.billy);
     }
 
     public void take(View v) {
@@ -28,7 +45,6 @@ abstract public class ReactionScenarioCookieActivity extends ReactionScenarioAct
         ImageView billy = (ImageView) findViewById(R.id.BillyHangingCookie);
         ImageView cookies = (ImageView) findViewById(R.id.MovableCookies);
         cookies.setImageResource(android.R.color.transparent);
-        billy.setImageResource(R.drawable.billycookie);
-
+        billy.setImageResource(R.drawable.billy_hanging_flipped_cookies);
     }
 }
