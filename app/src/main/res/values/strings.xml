@@ -17,4 +17,7 @@
 
     <color name="sand">#E6E2AF</color>
 
+    <string name="title_activity_results">ResultsActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

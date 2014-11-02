@@ -33,7 +33,11 @@
             android:name="appathon.com.billythesilly.ShopActivity"
             android:label="@string/title_activity_shop"
             android:screenOrientation="landscape" />
-
+        <activity
+            android:name=".scenario.ResultsActivity"
+            android:label="@string/title_activity_results"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>

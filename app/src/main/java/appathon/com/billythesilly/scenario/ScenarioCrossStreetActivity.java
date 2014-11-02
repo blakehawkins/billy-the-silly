@@ -1,6 +1,7 @@
 package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -115,6 +116,7 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
                 case MAP_TAG_LEFT:
                     if(!(entry.getValue() instanceof LookAction)){
                         Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        goToResults(false);
                         return 0;
                     }
                     bits |= 1;
@@ -123,6 +125,7 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
                 case MAP_TAG_RIGHT:
                     if(!(entry.getValue() instanceof LookAction)){
                         Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        goToResults(false);
                         return 0;
                     }
                     bits |= 2;
@@ -131,17 +134,26 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
                 case MAP_TAG_TOP:
                     if(!(entry.getValue() instanceof WalkAction) || bits < 3){
                         Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        goToResults(false);
                         return 0;
                     }
                     Log.v("ScenarioCrossStreetActivity", "Success!");
+                    goToResults(true);
                     break;
 
                 default:
                     Log.e("ScenarioCrossStreetActivity", "Err! Unrecognized tag");
+                    goToResults(false);
                     break;
             }
         }
         return 0;
+    }
+
+    public void goToResults(boolean n){
+        Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
+        intent.putExtra("Key1",n);
+        startActivity(intent);
     }
 
     @Override
