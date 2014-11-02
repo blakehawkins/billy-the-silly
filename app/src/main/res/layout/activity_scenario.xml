@@ -20,10 +20,10 @@
         android:layout_alignParentStart="true"></LinearLayout>
 
     <!-- Sprite Region -->
-    <AbsoluteLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spriteRegion"></AbsoluteLayout>
+        android:id="@+id/spriteRegion"></RelativeLayout>
 
     <!-- Done! Button -->
     <Button

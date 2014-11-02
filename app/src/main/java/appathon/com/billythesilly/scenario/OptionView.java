@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.widget.Button;
 
+import appathon.com.billythesilly.R;
+
 /**
  * Created by kamen on 14-11-1.
  */
@@ -25,8 +27,9 @@ public class OptionView extends Button {
     }
 
     public void unselect() {
-        this.setBackgroundColor(Color.BLACK);
+        this.setBackgroundResource(R.drawable.rounded_button);
         this.setTextColor(Color.WHITE);
+        this.setPadding(1, 0, 0, 0);
     }
 
     public void select() {
