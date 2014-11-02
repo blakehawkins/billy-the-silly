@@ -21,7 +21,7 @@ import appathon.com.billythesilly.R;
  */
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implements View
         .OnClickListener {
-    private OptionView _selectedView;
+    private TopBarAction _selectedView;
 
     protected void drawSprites(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
@@ -49,31 +49,30 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         topBarLayout.setOnClickListener(this);
 
         // build actions
-        TopBarAction[] options = {new TopBarAction(true, 0, null, "Look"),
-                new TopBarAction(true,
-                        0, null, "Walk"), new TopBarAction(true, 0, null, "Run")};
+        TopBarAction[] options = {
+                new TopBarAction(context, true, 0, null, "Look"),
+                new TopBarAction(context, true, 0, null, "Walk"),
+                new TopBarAction(context, true, 0, null, "Run" )};
 
         // put them in the top bar
         for (TopBarAction opt : options) {
-            final OptionView optionView = new OptionView(context, opt);
-            optionView.unselect();
-            optionView.setText(opt.getText());
-            optionView.setOnClickListener(new View.OnClickListener() {
+            opt.deselect();
+            opt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    OptionView optionView = (OptionView) view;
+                    TopBarAction topBarAction = (TopBarAction) view;
                     if (_selectedView != null) {
-                        _selectedView.unselect();
+                        _selectedView.deselect();
                     }
                     if (_selectedView == view) {
                         _selectedView = null;
                         return;
                     }
-                    optionView.select();
-                    _selectedView = optionView;
+                    topBarAction.select();
+                    _selectedView = topBarAction;
                 }
             });
-            topBarLayout.addView(optionView);
+            topBarLayout.addView(opt);
         }
     }
 
@@ -132,9 +131,10 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
             if (topBarLayout != null) {
                 topBarLayout.addView(_selectedView);
             }
-            _selectedView.unselect();
+            _selectedView.deselect();
             _selectedView = null;
         } catch (ClassCastException e) {
+            // Ignore incorrect click type
         }
     }
 }

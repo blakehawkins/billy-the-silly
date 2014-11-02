@@ -43,7 +43,7 @@ public class ScenariosScreen extends Activity {
     }
 
     public void goButton1(View view) {
-        Intent intent = new Intent(this, StartScreen.class);
+        Intent intent = new Intent(this, ScenarioCrossStreetActivity.class);
         startActivity(intent);
     }
 
