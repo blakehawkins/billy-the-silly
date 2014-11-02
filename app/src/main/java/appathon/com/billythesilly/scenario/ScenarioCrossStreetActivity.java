@@ -4,10 +4,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import appathon.com.billythesilly.R;
 
@@ -21,7 +23,6 @@ import appathon.com.billythesilly.R;
  */
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implements View
         .OnClickListener {
-    private TopBarAction _selectedView;
 
     protected void drawSprites(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
@@ -45,57 +46,35 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         // get the top bar
         LinearLayout topBarLayout = (LinearLayout) findViewById(R.id.optionLayout);
 
-        // apply the click listener for the top bar
-        topBarLayout.setOnClickListener(this);
-
         // build actions
         TopBarAction[] options = {
-                new TopBarAction(context, true, 0, null, "Look"),
-                new TopBarAction(context, true, 0, null, "Walk"),
-                new TopBarAction(context, true, 0, null, "Run" )};
+                new LookAction(context, 0),
+                new WalkAction(context, 0),
+                new RunAction (context, 0)};
 
         // put them in the top bar
         for (TopBarAction opt : options) {
-            opt.deselect();
-            opt.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TopBarAction topBarAction = (TopBarAction) view;
-                    if (_selectedView != null) {
-                        _selectedView.deselect();
-                    }
-                    if (_selectedView == view) {
-                        _selectedView = null;
-                        return;
-                    }
-                    topBarAction.select();
-                    _selectedView = topBarAction;
-                }
-            });
+
+            // listen to clicks
+            opt.setOnClickListener(this);
+
+            // add to top bar
             topBarLayout.addView(opt);
         }
     }
 
     protected void initializeTargets(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
+        ArrayList<Target> targets = new ArrayList<Target>();
 
-        // Left side of Road
-        ImageView sparkleLeft = new ImageView(this);
-        sparkleLeft.setImageResource(R.drawable.sparkle_box);
-        sparkleLeft.setPadding(60, 175, 0, 0);
-        spriteRegion.addView(sparkleLeft);
+        // left
+        targets.add(new Target(cxt, this, spriteRegion, 60, 175));
 
-        // Right side of Road
-        ImageView sparkleRight = new ImageView(this);
-        sparkleRight.setImageResource(R.drawable.sparkle_box);
-        sparkleRight.setPadding(550, 175, 0, 0);
-        spriteRegion.addView(sparkleRight);
+        // right
+        targets.add(new Target(cxt, this, spriteRegion, 550, 175));
 
-        // Across the Road
-        ImageView sparkleAcross = new ImageView(this);
-        sparkleAcross.setImageResource(R.drawable.sparkle_box);
-        sparkleAcross.setPadding(290, 65, 0, 0);
-        spriteRegion.addView(sparkleAcross);
+        // top
+        targets.add(new Target(cxt, this, spriteRegion, 295, 65));
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,21 +99,19 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
 
     @Override
     public void onClick(View view) {
-        try {
-            TopBarLayout topBarLayout = (TopBarLayout) view;
-            if (_selectedView == null) {
+        TopBarAction topBarAction = (TopBarAction) view;
+
+        if (getSelectedView() != null) {
+            getSelectedView().deselect();
+        }
+
+        if (topBarAction.useTarget()) {
+            if (getSelectedView() == view) {
+                setSelectedView(null);
                 return;
             }
-
-            ((ViewGroup) _selectedView.getParent()).removeView(_selectedView);
-
-            if (topBarLayout != null) {
-                topBarLayout.addView(_selectedView);
-            }
-            _selectedView.deselect();
-            _selectedView = null;
-        } catch (ClassCastException e) {
-            // Ignore incorrect click type
+            topBarAction.select();
+            setSelectedView(topBarAction);
         }
     }
 }

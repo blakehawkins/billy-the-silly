@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import appathon.com.billythesilly.R;
 
@@ -18,6 +19,8 @@ import appathon.com.billythesilly.R;
  */
 abstract public class ScenarioActivity extends Activity {
     private ArrayList<Target> targets;
+    private HashMap<TopBarAction, Target> associations = new HashMap<TopBarAction, Target>();
+    private TopBarAction _selectedView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,4 +50,16 @@ abstract public class ScenarioActivity extends Activity {
     abstract protected void drawSprites(Context cxt);
 
     abstract public void grade(View view);
+
+    protected void associate(TopBarAction tba, Target t){
+        associations.put(tba, t);
+    }
+
+    protected TopBarAction getSelectedView(){
+        return _selectedView;
+    }
+
+    protected void setSelectedView(TopBarAction tba){
+        _selectedView = tba;
+    }
 }
