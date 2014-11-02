@@ -23,21 +23,27 @@ public class Stats extends Activity {
     public void generateContent() {
         // Create Progressbar
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        int progressStatus = 0;
+        for (boolean b:  Storage.levels){
+            if (b) {
+                progressStatus +=1;
+            }
+        }
         progressBar.setProgress(progressStatus);
         // Fill TextFields
         TextView stars = (TextView) this.findViewById(R.id.StarsEarned);
         TextView times = (TextView) this.findViewById(R.id.TimesHelped);
         TextView rewards = (TextView) this.findViewById(R.id.RewardsEarned);
-        stars.setText("x " + String.valueOf(starsTotal));
-        times.setText("x " + String.valueOf(timesTotal));
-        rewards.setText("x " + String.valueOf(rewardsTotal));
+        stars.setText("x " + String.valueOf(Storage.stars));
+        times.setText("x " + String.valueOf(progressStatus));
+        rewards.setText("x " + String.valueOf(Storage.rewards.size()));
 
         TextView progress = (TextView) this.findViewById(R.id.Progress);
         progress.setText("Scenarios: " + progressStatus + "/" + progressBar.getMax());
     }
 
     public void generateBilly() {
-        if (rewardsTotal > 0) {
+        if (Storage.rewards.size() > 0) {
             ImageView currBilly = (ImageView) this.findViewById(R.id.CurrentBilly);
             currBilly.setImageResource(R.drawable.shopbilly);
             ImageView arrow = (ImageView) this.findViewById(R.id.Arrow);

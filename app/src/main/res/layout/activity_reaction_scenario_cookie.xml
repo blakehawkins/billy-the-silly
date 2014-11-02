@@ -58,5 +58,23 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/ChairArea"
+        android:layout_toStartOf="@+id/TakeButton"
+        android:layout_below="@+id/BillyHangingCookie"
+        android:layout_toLeftOf="@+id/TakeButton" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/TableArea"
+        android:layout_toStartOf="@+id/TakeButton"
+        android:layout_alignBottom="@+id/ChairArea"
+        android:layout_alignRight="@+id/Sit"
+        android:layout_alignEnd="@+id/Sit"
+        android:layout_marginBottom="42dp" />
+
 
 </RelativeLayout>
