@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,12 +40,16 @@ public class ShopActivity extends Activity implements BuyDialogFragment.OnDialog
         return super.onOptionsItemSelected(item);
     }
     public void buyEyes (View view){
-        DialogFragment dialogFragment = new BuyDialogFragment();
+        DialogFragment dialogFragment = BuyDialogFragment.newInstance("Wow some eyes",0);
+        dialogFragment.show(getFragmentManager(), "dialog");
+    }
+    public void buyMouth (View view){
+        DialogFragment dialogFragment = BuyDialogFragment.newInstance("A lovely smile",1);
         dialogFragment.show(getFragmentManager(), "dialog");
     }
 
     @Override
-    public void onDialogInteraction(Uri uri) {
-
+    public void buyPressed(View view, int id) {
+        Log.d("ShopActivity","Buy pressed");
     }
 }
