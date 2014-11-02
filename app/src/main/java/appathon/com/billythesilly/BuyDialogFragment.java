@@ -54,7 +54,7 @@ public class BuyDialogFragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setStyle(STYLE_NO_FRAME,0);
+        this.setStyle(STYLE_NO_TITLE,0);
         if (getArguments() != null) {
             mDescription = getArguments().getString(ARG_DESCRIPTION);
             mImageID = getArguments().getInt(ARG_IMAGE);
