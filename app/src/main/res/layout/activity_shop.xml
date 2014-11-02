@@ -12,7 +12,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="left|top"
-        android:gravity="top">
+        android:gravity="center">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -49,8 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="25dp"
-           >
+            android:paddingBottom="50dp">
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -63,7 +62,8 @@
                 android:paddingTop="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="0dp"
-                android:onClick="buyEyes" />
+                android:onClick="buyItem"
+                android:contentDescription="Oh wow some eyes!" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -77,7 +77,8 @@
                 android:paddingRight="20dp"
                 android:paddingBottom="0dp"
                 android:background="#00ffffff"
-                android:onClick="buyMouth" />
+                android:onClick="buyItem"
+                android:contentDescription="A mouth :)" />
 
         </LinearLayout>
 
@@ -86,31 +87,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="10dp">
+            android:paddingBottom="40dp">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton3"
-                android:src="@drawable/eyes_nose"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="0dp"
+                android:src="@drawable/santahat"
                 android:background="#00ffffff"
-                android:onClick="buyEyes" />
+                android:onClick="buyItem"
+                android:scaleType="fitCenter"
+                android:contentDescription="A festive Santa hat" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton4"
-                android:src="@drawable/smile_big"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="0dp"
+                android:src="@drawable/haircut"
                 android:background="#00ffffff"
-                android:onClick="buyMouth" />
+                android:onClick="buyItem"
+                android:contentDescription="Some nice hair" />
 
         </LinearLayout>
 

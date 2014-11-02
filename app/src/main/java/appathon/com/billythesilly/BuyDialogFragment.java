@@ -28,7 +28,6 @@ public class BuyDialogFragment extends DialogFragment implements View.OnClickLis
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_DESCRIPTION = "param1";
     private static final String ARG_IMAGE = "param2";
-    private static final HashMap<Integer,Drawable> PIC_LIST = new HashMap<Integer, Drawable>();
 
     // TODO: Rename and change types of parameters
     private String mDescription;
@@ -61,8 +60,6 @@ public class BuyDialogFragment extends DialogFragment implements View.OnClickLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PIC_LIST.put(0, getResources().getDrawable(R.drawable.eyes_nose));
-        PIC_LIST.put(1, getResources().getDrawable(R.drawable.smile_big));
         this.setStyle(STYLE_NO_TITLE,0);
         if (getArguments() != null) {
             mDescription = getArguments().getString(ARG_DESCRIPTION);
@@ -86,7 +83,7 @@ public class BuyDialogFragment extends DialogFragment implements View.OnClickLis
     public void onStart(){
         super.onStart();
         ((TextView)getView().findViewById(R.id.dialogText)).setText(mDescription);
-        ((ImageView)getView().findViewById(R.id.dialogImage)).setImageDrawable(PIC_LIST.get(mImageID));
+        ((ImageView)getView().findViewById(R.id.dialogImage)).setImageDrawable(((ImageView)getActivity().findViewById(mImageID)).getDrawable());
     }
 
 
