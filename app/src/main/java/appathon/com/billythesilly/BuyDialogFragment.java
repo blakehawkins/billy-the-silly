@@ -2,11 +2,17 @@ package appathon.com.billythesilly;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.HashMap;
 
 
 /**
@@ -17,11 +23,12 @@ import android.view.ViewGroup;
  * Use the {@link BuyDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BuyDialogFragment extends DialogFragment {
+public class BuyDialogFragment extends DialogFragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_DESCRIPTION = "param1";
     private static final String ARG_IMAGE = "param2";
+    private static final HashMap<Integer,Drawable> PIC_LIST = new HashMap<Integer, Drawable>();
 
     // TODO: Rename and change types of parameters
     private String mDescription;
@@ -54,6 +61,8 @@ public class BuyDialogFragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PIC_LIST.put(0, getResources().getDrawable(R.drawable.eyes_nose));
+        PIC_LIST.put(1, getResources().getDrawable(R.drawable.smile_big));
         this.setStyle(STYLE_NO_TITLE,0);
         if (getArguments() != null) {
             mDescription = getArguments().getString(ARG_DESCRIPTION);
@@ -65,15 +74,21 @@ public class BuyDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buy_dialog, container, false);
+        View v = inflater.inflate(R.layout.fragment_buy_dialog, container, false);
+        Button b = (Button)v.findViewById(R.id.buyButton);
+        Button b2 = (Button)v.findViewById(R.id.cancelButton);
+        b.setOnClickListener(this);
+        b2.setOnClickListener(this);
+        return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onDialogInteraction(uri);
-        }
+    @Override
+    public void onStart(){
+        super.onStart();
+        ((TextView)getView().findViewById(R.id.dialogText)).setText(mDescription);
+        ((ImageView)getView().findViewById(R.id.dialogImage)).setImageDrawable(PIC_LIST.get(mImageID));
     }
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -92,6 +107,19 @@ public class BuyDialogFragment extends DialogFragment {
         mListener = null;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.buyButton:
+                if (mListener != null) {
+                    mListener.buyPressed(v, mImageID);
+                }
+                this.dismiss();
+            case R.id.cancelButton:
+                this.dismiss();
+        }
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -104,7 +132,7 @@ public class BuyDialogFragment extends DialogFragment {
      */
     public interface OnDialogInteractionListener {
         // TODO: Update argument type and name
-        public void onDialogInteraction(Uri uri);
+        public void buyPressed(View view, int id);
     }
 
 }
