@@ -9,6 +9,7 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 
+import appathon.com.billythesilly.scenario.ReactionScenarioCookieActivity;
 import appathon.com.billythesilly.scenario.ScenarioCrossStreetActivity;
 
 public class ScenariosScreen extends Activity {
@@ -55,7 +56,7 @@ public class ScenariosScreen extends Activity {
     }
 
     public void goButton2(View view) {
-        Intent intent = new Intent(this, StartScreen.class);
+        Intent intent = new Intent(this, ReactionScenarioCookieActivity.class);
         startActivity(intent);
     }
 
