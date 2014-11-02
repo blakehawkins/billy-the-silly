@@ -23,7 +23,30 @@
             android:layout_height="wrap_content"
             android:id="@+id/dialogImage"
             android:src="@drawable/smile_big"
-            android:padding="40dp" />
+            android:padding="10dp"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="5"
+                android:id="@+id/dialogTextView"
+                android:padding="10dp" />
+
+            <ImageView
+                android:layout_width="41dp"
+                android:layout_height="47dp"
+                android:id="@+id/imageView2"
+                android:src="@drawable/star" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -34,7 +57,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="   Buy   "
-                android:id="@+id/buyButton" />
+                android:id="@+id/buyButton"
+                android:focusable="false"
+                android:enabled="true" />
 
             <Button
                 android:layout_width="wrap_content"

@@ -24,12 +24,28 @@
             android:paddingBottom="10dp"
             android:gravity="center">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="5"
+                android:id="@+id/numStars"
+                android:textColor="#ff000000"
+                android:textSize="38dp" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/imageView3"
+                android:src="@drawable/star" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView"
                 android:paddingRight="10dp"
-                android:src="@drawable/cart" />
+                android:src="@drawable/cart"
+                android:paddingLeft="40dp" />
 
             <TextView android:text="Shop" android:layout_width="wrap_content"
                 android:textAppearance="@android:style/TextAppearance.Large"
@@ -63,7 +79,8 @@
                 android:paddingRight="20dp"
                 android:paddingBottom="0dp"
                 android:onClick="buyItem"
-                android:contentDescription="Oh wow some eyes!" />
+                android:contentDescription="Oh wow some eyes!"
+                android:focusable="false" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -106,7 +123,8 @@
                 android:src="@drawable/haircut"
                 android:background="#00ffffff"
                 android:onClick="buyItem"
-                android:contentDescription="Some nice hair" />
+                android:contentDescription="Some nice hair"
+                android:scaleType="fitCenter" />
 
         </LinearLayout>
 

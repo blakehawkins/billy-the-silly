@@ -5,6 +5,7 @@ import android.app.DialogFragment;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class BuyDialogFragment extends DialogFragment implements View.OnClickLis
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_DESCRIPTION = "param1";
     private static final String ARG_IMAGE = "param2";
+
 
     // TODO: Rename and change types of parameters
     private String mDescription;
@@ -83,7 +85,11 @@ public class BuyDialogFragment extends DialogFragment implements View.OnClickLis
     public void onStart(){
         super.onStart();
         ((TextView)getView().findViewById(R.id.dialogText)).setText(mDescription);
-        ((ImageView)getView().findViewById(R.id.dialogImage)).setImageDrawable(((ImageView)getActivity().findViewById(mImageID)).getDrawable());
+        ((ImageView)getView().findViewById(R.id.dialogImage)).setImageDrawable(((ImageView) getActivity().findViewById(mImageID)).getDrawable());
+        ((TextView)getView().findViewById(R.id.dialogTextView)).setText(Storage.prices.get(mImageID));
+        if (Integer.valueOf(Storage.prices.get(mImageID)) > Storage.stars){
+            getView().findViewById(R.id.buyButton).setEnabled(false);
+        }
     }
 
 
@@ -109,6 +115,7 @@ public class BuyDialogFragment extends DialogFragment implements View.OnClickLis
         switch (v.getId()){
             case R.id.buyButton:
                 if (mListener != null) {
+                    Storage.stars -= Integer.valueOf(Storage.prices.get(mImageID));
                     mListener.buyPressed(v, mImageID);
                 }
                 this.dismiss();
