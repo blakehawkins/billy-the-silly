@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 
-import appathon.com.billythesilly.scenario.BaseGameActivity;
 import appathon.com.billythesilly.scenario.ScenarioCrossStreetActivity;
 //Line that changes color of text:     current1.setTextColor(Color.BLUE);
 
