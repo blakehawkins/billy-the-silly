@@ -2,8 +2,10 @@ package appathon.com.billythesilly;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +15,8 @@ import android.widget.ImageView;
 
 public class ShopActivity extends Activity implements BuyDialogFragment.OnDialogInteractionListener{
 
+    private static final int views[] = {R.id.imageButton,R.id.imageButton2,R.id.imageButton3,
+            R.id.imageButton4};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +46,23 @@ public class ShopActivity extends Activity implements BuyDialogFragment.OnDialog
     }
     public void buyItem (View view){
         ImageView iView = (ImageView) view;
-        DialogFragment dialogFragment = BuyDialogFragment.newInstance((String)iView.getContentDescription(),iView.getId());
-        dialogFragment.show(getFragmentManager(), "dialog");
+        int id = iView.getId();
+        if (!Storage.rewards.containsKey(id)){
+            DialogFragment dialogFragment = BuyDialogFragment.newInstance((String)iView.getContentDescription(),id);
+            dialogFragment.show(getFragmentManager(), "dialog");
+        }
     }
 
+    public void checkRewards(Layout layout){
+        for (int i:views){
+            if (Storage.rewards.containsKey(i)){
+
+            }
+        }
+    }
     @Override
     public void buyPressed(View view, int id) {
-        Log.d("ShopActivity","Buy pressed");
+        Storage.rewards.put(id, ((ImageView) findViewById(id)).getDrawable());
+        Log.d("ShopActivity", "Buy pressed");
     }
 }
