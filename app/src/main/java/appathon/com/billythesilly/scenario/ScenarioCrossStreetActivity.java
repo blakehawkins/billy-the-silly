@@ -153,6 +153,7 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
     public void goToResults(boolean n){
         Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
         intent.putExtra("Key1",n);
+        intent.putExtra("Key2","1");
         startActivity(intent);
     }
 

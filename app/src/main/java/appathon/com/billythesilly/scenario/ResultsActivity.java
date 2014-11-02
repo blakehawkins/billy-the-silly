@@ -22,12 +22,15 @@ public class ResultsActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         boolean numStr = extras.getBoolean("Key1");
+        String ff = extras.getString("Key2");
+        int sceNum = Integer.parseInt(ff);
         if(numStr){
             TextView current = (TextView) findViewById(R.id.textSuccess);
             current.setVisibility(View.VISIBLE);
             Storage hold = new Storage();
-            hold.levels[0] = true;
-            hold.stars++;
+            if(!(hold.levels[sceNum-1]))
+                hold.stars++;
+            hold.levels[sceNum-1] = true;
         }
         else {
             TextView current = (TextView) findViewById(R.id.textFail);
