@@ -9,9 +9,9 @@ import android.widget.Button;
  * Created by kamen on 14-11-1.
  */
 public class OptionView extends Button {
-    private Option _option;
+    private TopBarMember _option;
 
-    public OptionView(Context context, Option option) {
+    public OptionView(Context context, TopBarMember option) {
         super(context);
         _option = option;
     }
@@ -20,7 +20,7 @@ public class OptionView extends Button {
         super(context, attrs);
     }
 
-    public Option getOption() {
+    public TopBarMember getOption() {
         return _option;
     }
 
