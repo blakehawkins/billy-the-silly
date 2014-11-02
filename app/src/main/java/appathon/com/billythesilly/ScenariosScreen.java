@@ -59,12 +59,12 @@ public class ScenariosScreen extends Activity {
     }
 
     public void goNextPage(View view) {
-        Intent intent = new Intent(this, ScenariosScreen2.class);
+        Intent intent = new Intent(this, StartScreen.class);
         startActivity(intent);
     }
 
     public void goPreviousPage(View view) {
-        Intent intent = new Intent(this, ScenariosScreen6.class);
+        Intent intent = new Intent(this, StartScreen.class);
         startActivity(intent);
     }
 
