@@ -10,8 +10,9 @@ import java.util.HashMap;
  */
 public class Storage {
     public static HashMap<Integer,Drawable> rewards = new HashMap<Integer, Drawable>();
-    public static int stars = 0;
+    public static int stars = 3;
     public static boolean[] levels = { false, false, false, false, false, false, false,
             false, false, false, false, false, false, false, false, false, false, false};
+    public static HashMap<Integer,String> prices = new HashMap<Integer, String>();
 
 }
