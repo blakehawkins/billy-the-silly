@@ -21,19 +21,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Testing Changes 0"
-            android:id="@+id/button1"
+            android:id="@+id/button0"
             android:layout_gravity="center_horizontal"
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:typeface="normal"
             android:textSize="25sp"
-            android:onClick="goButton1"
+            android:onClick="goButton0"
             android:textColor="#737373" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Testing Changes 1"
-            android:id="@+id/button2"
+            android:id="@+id/button1"
             android:layout_gravity="center_horizontal"
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:textSize="25sp"
@@ -44,11 +44,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Testing Changes 2"
-            android:id="@+id/button3"
+            android:id="@+id/button2"
             android:layout_gravity="center_horizontal"
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:textSize="25sp"
-            android:onClick="goButton3"
+            android:onClick="goButton2"
             android:textColor="#737373" />
 
     </LinearLayout>
@@ -95,14 +95,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <!-- TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Page 1"
-        android:textColor="#046380"
-        android:id="@+id/textPage"
-        android:layout_alignBottom="@+id/buttonPrevious"
-        android:layout_centerHorizontal="true" /> -->
 
 </RelativeLayout>
