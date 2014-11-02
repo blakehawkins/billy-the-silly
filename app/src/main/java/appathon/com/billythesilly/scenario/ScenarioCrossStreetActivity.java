@@ -1,13 +1,11 @@
 package appathon.com.billythesilly.scenario;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 
 import appathon.com.billythesilly.R;
 
@@ -15,15 +13,16 @@ import appathon.com.billythesilly.R;
     a scenario and the user must select actions and subjects in a valid order to score points.
     Classification games are the ones where the user is given a scenario with actions happening,
     and the player identifies good and bad things.
+
+    Cross Street is a Reaction game. We present the user with a road and a goal to cross the
+    street. Only by looking left and right before crossing will a star be awarded.
  */
-public class ScenarioCrossStreetActivity extends Activity {
-    private BaseGame _baseGame;
+public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
     private OptionView _selectedView;
-    private RadioGroup _stanceRadioGroup;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_game);
+        setContentView(R.layout.activity_scenario);
 
         Context context = getBaseContext();
         Option[] options = {new Option("A", true), new Option("B", false),
@@ -31,10 +30,6 @@ public class ScenarioCrossStreetActivity extends Activity {
 
         Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true,
                 true), new Slot(3, false, true)};
-
-        Stance[] stances = {new Stance("Sitting", true), new Stance("Standing", false)};
-
-        _baseGame = new BaseGame(slots);
 
         // For layout params
         LinearLayout temp = (LinearLayout) findViewById(R.id.optionLayout);
@@ -44,16 +39,12 @@ public class ScenarioCrossStreetActivity extends Activity {
         ((ViewGroup) temp.getParent()).addView(optionLayout);
         ((ViewGroup) temp.getParent()).removeView(temp);
 
-        LinearLayout slotLayout = (LinearLayout) findViewById(R.id.slotLayout);
-
-        _stanceRadioGroup = (RadioGroup) findViewById(R.id.stanceRadioGroup);
-
-        for (Stance s : stances) {
-            StanceRadioButton stance = new StanceRadioButton(context, s);
-            stance.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams
-                    .WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            _stanceRadioGroup.addView(stance);
-        }
+        LinearLayout slotLayout = new LinearLayout(context);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams
+                .MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        slotLayout.setLayoutParams(lp);
+        slotLayout.setWeightSum(0.0f);
+        slotLayout.setOrientation(LinearLayout.HORIZONTAL);
 
         for (Option opt : options) {
             final OptionView optionView = new OptionView(context, opt);
@@ -119,7 +110,6 @@ public class ScenarioCrossStreetActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        _baseGame.end();
         super.onDestroy();
     }
 
@@ -128,21 +118,8 @@ public class ScenarioCrossStreetActivity extends Activity {
 //
 //    }
 
-    public void Grade(View view) {
-        boolean correctStance;
-        if (_stanceRadioGroup.getChildCount() != 0) {
-            int selectedId = _stanceRadioGroup.getCheckedRadioButtonId();
-            if (selectedId == -1) {
-                correctStance = false;
-            } else {
-                StanceRadioButton stanceButton = (StanceRadioButton) findViewById(selectedId);
-                Stance stance = stanceButton.getStance();
-                correctStance = stance.getIsCorrect();
-            }
-        } else {
-            correctStance = true;
-        }
-        int stars = _baseGame.grade(correctStance);
-        Log.e("", "" + stars);
+    public void grade(View view) {
+        int stars = 0;
+        Log.e("ScenarioCrossStreetActivity", Integer.toString(stars));
     }
 }

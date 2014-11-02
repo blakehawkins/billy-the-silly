@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
-import appathon.com.billythesilly.scenario.BaseGameActivity;
 import appathon.com.billythesilly.scenario.ScenarioCrossStreetActivity;
 // import android.widget.TextView;
 
