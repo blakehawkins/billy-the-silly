@@ -15,4 +15,6 @@
     <string name="title_activity_scenarios_screen5">ScenariosScreen5</string>
     <string name="title_activity_scenarios_screen6">ScenariosScreen6</string>
 
+    <color name="sand">#E6E2AF</color>
+
 </resources>

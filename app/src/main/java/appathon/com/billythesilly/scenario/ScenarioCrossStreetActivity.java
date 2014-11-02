@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import appathon.com.billythesilly.R;
 
@@ -20,21 +23,19 @@ import appathon.com.billythesilly.R;
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
     private OptionView _selectedView;
 
+    protected void drawSprites(Context cxt){
+        AbsoluteLayout spriteRegion = (AbsoluteLayout) findViewById(R.id.spriteRegion);
+        ImageView street = new ImageView(this);
+        street.setImageResource(R.drawable.street);
+        spriteRegion.addView(street);
+    }
+
     protected void initializeTopBarMembers(Context context) {
-        TopBarAction[] options = {new TopBarAction(true, 0, null, "Look"), new TopBarAction(true,
-                0, null, "Walk"), new TopBarAction(true, 0, null, "Run")};
+        // get the top bar
+        LinearLayout topBarLayout = (LinearLayout) findViewById(R.id.optionLayout);
 
-        LinearLayout optionLayout = (LinearLayout) findViewById(R.id.optionLayout);
-        optionLayout.setMinimumHeight(70);
-
-        LinearLayout slotLayout = new LinearLayout(context);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams
-                .MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        slotLayout.setLayoutParams(lp);
-        slotLayout.setWeightSum(0.0f);
-        slotLayout.setOrientation(LinearLayout.HORIZONTAL);
-
-        optionLayout.setOnClickListener(new View.OnClickListener() {
+        // apply the click listener for the top bar
+        topBarLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TopBarLayout topBarLayout = (TopBarLayout) view;
@@ -48,6 +49,11 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
             }
         });
 
+        // build actions
+        TopBarAction[] options = {new TopBarAction(true, 0, null, "Look"), new TopBarAction(true,
+                0, null, "Walk"), new TopBarAction(true, 0, null, "Run")};
+
+        // put them in the top bar
         for (TopBarAction opt : options) {
             final OptionView optionView = new OptionView(context, opt);
             optionView.unselect();
@@ -67,8 +73,12 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
                     _selectedView = optionView;
                 }
             });
-            optionLayout.addView(optionView);
+            topBarLayout.addView(optionView);
         }
+    }
+
+    protected void initializeTargets(Context cxt){
+        // TODO add targets using parent
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +87,9 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
 
         Context context = getBaseContext();
         initializeTopBarMembers(context);
+        initializeTargets(context);
+
+        drawSprites(context);
     }
 
     @Override
