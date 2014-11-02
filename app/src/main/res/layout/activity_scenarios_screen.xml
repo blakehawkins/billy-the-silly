@@ -15,15 +15,15 @@
         android:text="Scenarios"
         android:id="@+id/textScenarios"
         android:textStyle="bold"
-        android:textSize="28sp"
+        android:textSize="36sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:textColor="#f8000000" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="1"
         android:id="@+id/button1"
         android:onClick="goButton1"
@@ -31,12 +31,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="48dp"
-        android:textColor="#e5004520" />
+        android:layout_marginTop="48dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="2"
         android:id="@+id/button2"
         android:onClick="goButton2"
@@ -46,8 +45,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="3"
         android:id="@+id/button3"
         android:onClick="goButton3"
@@ -57,8 +56,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="4"
         android:id="@+id/button4"
         android:onClick="goButton4"
@@ -68,8 +67,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="5"
         android:id="@+id/button5"
         android:onClick="goButton5"
@@ -79,8 +78,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="6"
         android:id="@+id/button6"
         android:onClick="goButton6"
@@ -90,8 +89,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="7"
         android:id="@+id/button7"
         android:onClick="goButton7"
@@ -101,8 +100,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="8"
         android:id="@+id/button8"
         android:onClick="goButton8"
@@ -112,8 +111,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="9"
         android:id="@+id/button9"
         android:onClick="goButton9"
@@ -123,8 +122,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="10"
         android:id="@+id/button10"
         android:onClick="goButton10"
@@ -134,20 +133,20 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="11"
         android:id="@+id/button11"
         android:onClick="goButton11"
         android:layout_below="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="48dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="48dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="12"
         android:id="@+id/button12"
         android:onClick="goButton12"
@@ -157,8 +156,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="13"
         android:id="@+id/button13"
         android:onClick="goButton13"
@@ -168,8 +167,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="14"
         android:id="@+id/button14"
         android:onClick="goButton14"
@@ -179,8 +178,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="15"
         android:id="@+id/button15"
         android:onClick="goButton15"
@@ -190,8 +189,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="16"
         android:id="@+id/button16"
         android:onClick="goButton16"
@@ -201,8 +200,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="17"
         android:id="@+id/button17"
         android:onClick="goButton17"
@@ -212,8 +211,8 @@
         android:layout_marginLeft="24dp" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
         android:text="18"
         android:id="@+id/button18"
         android:onClick="goButton18"
