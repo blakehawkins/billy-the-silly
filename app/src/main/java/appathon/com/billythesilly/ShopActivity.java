@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 
 public class ShopActivity extends Activity implements BuyDialogFragment.OnDialogInteractionListener{
@@ -39,12 +40,9 @@ public class ShopActivity extends Activity implements BuyDialogFragment.OnDialog
 
         return super.onOptionsItemSelected(item);
     }
-    public void buyEyes (View view){
-        DialogFragment dialogFragment = BuyDialogFragment.newInstance("Wow some eyes",0);
-        dialogFragment.show(getFragmentManager(), "dialog");
-    }
-    public void buyMouth (View view){
-        DialogFragment dialogFragment = BuyDialogFragment.newInstance("A lovely smile",1);
+    public void buyItem (View view){
+        ImageView iView = (ImageView) view;
+        DialogFragment dialogFragment = BuyDialogFragment.newInstance((String)iView.getContentDescription(),iView.getId());
         dialogFragment.show(getFragmentManager(), "dialog");
     }
 
