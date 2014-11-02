@@ -9,7 +9,7 @@
     android:background="@drawable/background2"
     tools:context="appathon.com.billythesilly.scenario.ScenarioActivity">
 
-    <!-- Option Bar -->
+    <!-- Top Option Bar -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"

@@ -20,24 +20,12 @@ import appathon.com.billythesilly.R;
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
     private OptionView _selectedView;
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scenario);
+    protected void initializeTopBarMembers(Context context) {
+        TopBarAction[] options = {new TopBarAction(true, 0, null, "Look"), new TopBarAction(true,
+                0, null, "Walk"), new TopBarAction(true, 0, null, "Run")};
 
-        Context context = getBaseContext();
-        Option[] options = {new Option("A", true), new Option("B", false),
-                new Option("C", true)};
-
-        Slot[] slots = {new Slot(0, true, true), new Slot(1, false, true), new Slot(2, true,
-                true), new Slot(3, false, true)};
-
-        // For layout params
-        LinearLayout temp = (LinearLayout) findViewById(R.id.optionLayout);
-        SlotLayout optionLayout = new SlotLayout(context, new Slot(-1, false, false));
-        optionLayout.setLayoutParams(temp.getLayoutParams());
+        LinearLayout optionLayout = (LinearLayout) findViewById(R.id.optionLayout);
         optionLayout.setMinimumHeight(70);
-        ((ViewGroup) temp.getParent()).addView(optionLayout);
-        ((ViewGroup) temp.getParent()).removeView(temp);
 
         LinearLayout slotLayout = new LinearLayout(context);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams
@@ -46,10 +34,24 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
         slotLayout.setWeightSum(0.0f);
         slotLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-        for (Option opt : options) {
+        optionLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TopBarLayout topBarLayout = (TopBarLayout) view;
+                if (_selectedView == null) {
+                    return;
+                }
+                ((ViewGroup) _selectedView.getParent()).removeView(_selectedView);
+                topBarLayout.addView(_selectedView);
+                _selectedView.unselect();
+                _selectedView = null;
+            }
+        });
+
+        for (TopBarAction opt : options) {
             final OptionView optionView = new OptionView(context, opt);
             optionView.unselect();
-            optionView.setText(opt.getOption());
+            optionView.setText(opt.getText());
             optionView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -67,56 +69,20 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity {
             });
             optionLayout.addView(optionView);
         }
+    }
 
-        View optionView = optionLayout.getChildAt(0);
-        optionView.measure(0, 0);
-        int tempWidth = optionView.getMeasuredWidth();
-        int tempHeight = optionView.getMeasuredHeight();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scenario);
 
-        optionLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SlotLayout slotLayout = (SlotLayout) view;
-                if (_selectedView == null) {
-                    return;
-                }
-                ((ViewGroup) _selectedView.getParent()).removeView(_selectedView);
-                slotLayout.addView(_selectedView);
-                _selectedView.unselect();
-                _selectedView = null;
-            }
-        });
-
-        for (Slot sl : slots) {
-            SlotLayout slot = new SlotLayout(context, sl);
-            slot.setLayoutParams(new ViewGroup.LayoutParams(tempWidth, tempHeight));
-            slot.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    SlotLayout slotLayout = (SlotLayout) view;
-                    if (_selectedView == null || (slotLayout.getChildCount() > 0 && slotLayout
-                            .getSlot().getIsSingleSpace())) {
-                        return;
-                    }
-                    ((ViewGroup) _selectedView.getParent()).removeView(_selectedView);
-                    slotLayout.addView(_selectedView);
-                    _selectedView.unselect();
-                    _selectedView = null;
-                }
-            });
-            slotLayout.addView(slot);
-        }
+        Context context = getBaseContext();
+        initializeTopBarMembers(context);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
-
-    // TODO: Place a slot view in the top bar
-//    private void placeViewOnBar(OptionView view, SlotLayout slot) {
-//
-//    }
 
     public void grade(View view) {
         int stars = 0;

@@ -1,8 +1,11 @@
 package appathon.com.billythesilly.scenario;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+
+import java.util.ArrayList;
 
 import appathon.com.billythesilly.R;
 
@@ -12,6 +15,7 @@ import appathon.com.billythesilly.R;
     and the player identifies good and bad things.
  */
 abstract public class ScenarioActivity extends Activity {
+    private ArrayList<Target> targets;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +27,11 @@ abstract public class ScenarioActivity extends Activity {
         super.onDestroy();
     }
 
-    // TODO: Place a slot view in the top bar
-//    private void placeViewOnBar(OptionView view, SlotLayout slot) {
-//
-//    }
+    protected void addTarget(Target t) {
+        targets.add(t);
+    }
+
+    abstract protected void initializeTopBarMembers(Context cxt);
 
     abstract public void grade(View view);
 }
