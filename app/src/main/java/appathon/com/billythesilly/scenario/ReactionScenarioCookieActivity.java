@@ -13,7 +13,7 @@ import appathon.com.billythesilly.R;
  * Created by lisaxie on 02/11/2014.
  */
 public class ReactionScenarioCookieActivity extends ReactionScenarioActivity {
-
+private int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,15 @@ public class ReactionScenarioCookieActivity extends ReactionScenarioActivity {
     public void goDown(View v) {
         // Change Billy's stance
         ImageView billy = (ImageView) findViewById(R.id.BillyHangingCookie);
-        billy.setImageResource(R.drawable.billy);
+        billy.setImageResource(R.drawable.billy_sitting);
+
+        // Show Draggable Areas
+        View background = findViewById(R.id.cookieScenario);
+        background.setBackgroundResource(R.drawable.billycookiesparkles);
+        if (count == 0) {
+
+        }
+
     }
 
     public void take(View v) {
@@ -46,5 +54,9 @@ public class ReactionScenarioCookieActivity extends ReactionScenarioActivity {
         ImageView cookies = (ImageView) findViewById(R.id.MovableCookies);
         cookies.setImageResource(android.R.color.transparent);
         billy.setImageResource(R.drawable.billy_hanging_flipped_cookies);
+
+        // Unshow Draggable Areas
+        View background = findViewById(R.id.cookieScenario);
+        background.setBackgroundResource(R.drawable.billycookie);
     }
 }

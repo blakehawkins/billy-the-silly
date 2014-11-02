@@ -10,14 +10,11 @@ import android.widget.TextView;
 
 
 public class Stats extends Activity {
-    private int rewardsTotal,timesTotal,starsTotal, progressStatus;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        timesTotal = starsTotal = progressStatus =0;
-        rewardsTotal = 1;
         setContentView(R.layout.activity_stats);
         generateContent();
         generateBilly();
