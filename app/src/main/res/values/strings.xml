@@ -2,11 +2,16 @@
 <resources>
 
     <string name="app_name">Billy The Silly</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_stats">Stats</string>
     <string name="title_activity_scenarios_screen">ScenariosScreen</string>
     <string name="title_activity_scenario_cross_street">Crossing the Street</string>
     <string name="title_activity_shop">shopActivity</string>
+    <string name="scenario_button_done">Done!</string>
+    <string name="title_activity_scenarios_screen2">ScenariosScreen2</string>
+    <string name="title_activity_scenarios_screen3">ScenariosScreen3</string>
+    <string name="title_activity_scenarios_screen4">ScenariosScreen4</string>
+    <string name="title_activity_scenarios_screen5">ScenariosScreen5</string>
+    <string name="title_activity_scenarios_screen6">ScenariosScreen6</string>
 
 </resources>
