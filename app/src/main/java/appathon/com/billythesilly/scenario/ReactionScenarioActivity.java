@@ -1,5 +1,6 @@
 package appathon.com.billythesilly.scenario;
 
+import android.os.Bundle;
 import android.view.View;
 
 /**
@@ -7,5 +8,9 @@ import android.view.View;
  */
 abstract public class ReactionScenarioActivity extends ScenarioActivity {
     public void grade(View v){
+    }
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 }

@@ -10,8 +10,6 @@ import appathon.com.billythesilly.R;
  * Created by kamen on 14-11-1.
  */
 public class TopBarLayout extends LinearLayout {
-    private boolean _correct;
-    private boolean _isSingleSpace;
     private TopBarMember[] _options;
     private int N;
 

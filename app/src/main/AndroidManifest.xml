@@ -33,27 +33,6 @@
             android:name="appathon.com.billythesilly.ShopActivity"
             android:label="@string/title_activity_shop"
             android:screenOrientation="landscape" />
-        <activity
-            android:name="appathon.com.billythesilly.ScenariosScreen2"
-            android:label="@string/title_activity_scenarios_screen2"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="appathon.com.billythesilly.ScenariosScreen3"
-            android:label="@string/title_activity_scenarios_screen3"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="appathon.com.billythesilly.ScenariosScreen4"
-            android:label="@string/title_activity_scenarios_screen4"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="appathon.com.billythesilly.ScenariosScreen5"
-            android:label="@string/title_activity_scenarios_screen5"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="appathon.com.billythesilly.ScenariosScreen6"
-            android:label="@string/title_activity_scenarios_screen6"
-            android:screenOrientation="landscape" >
-        </activity>
     </application>
 
 </manifest>

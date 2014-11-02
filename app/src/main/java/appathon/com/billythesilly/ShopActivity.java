@@ -1,13 +1,15 @@
 package appathon.com.billythesilly;
 
 import android.app.Activity;
+import android.app.DialogFragment;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 
-public class ShopActivity extends Activity {
+public class ShopActivity extends Activity implements BuyDialogFragment.OnDialogInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,6 @@ public class ShopActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -38,6 +39,12 @@ public class ShopActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void buyEyes (View view){
+        DialogFragment dialogFragment = new BuyDialogFragment();
+        dialogFragment.show(getFragmentManager(), "dialog");
+    }
+
+    @Override
+    public void onDialogInteraction(Uri uri) {
 
     }
 }
