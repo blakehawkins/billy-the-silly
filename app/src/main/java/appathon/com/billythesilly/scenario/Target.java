@@ -1,7 +1,6 @@
 package appathon.com.billythesilly.scenario;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,13 +10,14 @@ import appathon.com.billythesilly.R;
 
 /* A target is one of the gold shiny things which you apply actions to */
 public class Target extends RelativeLayout implements Button.OnClickListener {
-    int px, py;
-    RelativeLayout sparkle;
-    RelativeLayout overlay;
-    Context cxt;
-    RelativeLayout spriteRegion;
-    ScenarioActivity owner;
-    int lamport=0;
+    private int px, py;
+    private RelativeLayout sparkle;
+    private RelativeLayout overlay;
+    private Context cxt;
+    private RelativeLayout spriteRegion;
+    private ScenarioActivity owner;
+    private int lamport = 0;
+    private int tag;
 
     public Target(Context cxt) {
         super(cxt);
@@ -63,12 +63,20 @@ public class Target extends RelativeLayout implements Button.OnClickListener {
         ol.setOnClickListener(this);
     }
 
-    public void setLamport(int q){
+    public void setLamport(int q) {
         lamport = q;
     }
 
-    public int getLamport(){
+    public int getLamport() {
         return lamport;
+    }
+
+    public void setMapTag(int q) {
+        tag = q;
+    }
+
+    public int getMapTag() {
+        return tag;
     }
 
     @Override

@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -24,6 +23,9 @@ import appathon.com.billythesilly.R;
  */
 public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implements View
         .OnClickListener {
+    private static final int MAP_TAG_LEFT = 1;
+    private static final int MAP_TAG_RIGHT = 2;
+    private static final int MAP_TAG_TOP = 3;
 
     protected void drawSprites(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
@@ -66,16 +68,18 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
 
     protected void initializeTargets(Context cxt) {
         RelativeLayout spriteRegion = (RelativeLayout) findViewById(R.id.spriteRegion);
-        ArrayList<Target> targets = new ArrayList<Target>();
 
         // left
-        targets.add(new Target(cxt, this, spriteRegion, 60, 175));
+        Target t = new Target(cxt, this, spriteRegion, 60, 175);
+        t.setMapTag(MAP_TAG_LEFT);
 
         // right
-        targets.add(new Target(cxt, this, spriteRegion, 550, 175));
+        t = new Target(cxt, this, spriteRegion, 550, 175);
+        t.setMapTag(MAP_TAG_RIGHT);
 
         // top
-        targets.add(new Target(cxt, this, spriteRegion, 295, 65));
+        t = new Target(cxt, this, spriteRegion, 295, 65);
+        t.setMapTag(MAP_TAG_TOP);
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +97,7 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         super.onDestroy();
     }
 
-    public void grade(View view) {
-        int stars = 0;
+    public int grade(View view) {
 
         // don't document this.
         TreeMap<Integer, Map.Entry<Target, TopBarAction>> sorter = new TreeMap<Integer,
@@ -104,11 +107,41 @@ public class ScenarioCrossStreetActivity extends ReactionScenarioActivity implem
         }
         // just kidding, that sorts the pairs by lamport value
 
+        int bits = 0; //0b00
+        // parse the sorted types to check for success
         for (int i : sorter.keySet()) {
-            Log.d("ScenarioCrossStreetActvity", "Lamport: " + String.valueOf(i) + " " + sorter.get(i).getValue().getType());
-        }
+            Map.Entry<Target, TopBarAction> entry = sorter.get(i);
+            switch (entry.getKey().getMapTag()) {
+                case MAP_TAG_LEFT:
+                    if(!(entry.getValue() instanceof LookAction)){
+                        Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        return 0;
+                    }
+                    bits |= 1;
+                    break;
 
-        Log.d("ScenarioCrossStreetActivity", Integer.toString(stars));
+                case MAP_TAG_RIGHT:
+                    if(!(entry.getValue() instanceof LookAction)){
+                        Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        return 0;
+                    }
+                    bits |= 2;
+                    break;
+
+                case MAP_TAG_TOP:
+                    if(!(entry.getValue() instanceof WalkAction) || bits < 3){
+                        Log.v("ScenarioCrossStreetActivity", "You failed!");
+                        return 0;
+                    }
+                    Log.v("ScenarioCrossStreetActivity", "Success!");
+                    break;
+
+                default:
+                    Log.e("ScenarioCrossStreetActivity", "Err! Unrecognized tag");
+                    break;
+            }
+        }
+        return 0;
     }
 
     @Override

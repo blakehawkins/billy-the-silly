@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import appathon.com.billythesilly.R;
@@ -19,7 +18,6 @@ import appathon.com.billythesilly.R;
     and the player identifies good and bad things.
  */
 abstract public class ScenarioActivity extends Activity {
-    private ArrayList<Target> targets;
     private HashMap<Target, TopBarAction> associations = new HashMap<Target, TopBarAction>();
     private TopBarAction _selectedView;
     private int lamport = 0;
@@ -41,17 +39,13 @@ abstract public class ScenarioActivity extends Activity {
         super.onDestroy();
     }
 
-    protected void addTarget(Target t) {
-        targets.add(t);
-    }
-
     abstract protected void initializeTopBarMembers(Context cxt);
 
     abstract protected void initializeTargets(Context cxt);
 
     abstract protected void drawSprites(Context cxt);
 
-    abstract public void grade(View view);
+    abstract public int grade(View view);
 
     protected void associate(TopBarAction tba, Target t) {
         lamport++;
