@@ -17,7 +17,6 @@ public class ScenariosScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenarios_screen);
-
     }
 
 
@@ -43,11 +42,6 @@ public class ScenariosScreen extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goButton0(View view) {
-        Intent intent = new Intent(this, StartScreen.class);
-        startActivity(intent);
-    }
-
     public void goButton1(View view) {
         Intent intent = new Intent(this, StartScreen.class);
         startActivity(intent);
@@ -58,14 +52,85 @@ public class ScenariosScreen extends Activity {
         startActivity(intent);
     }
 
-    public void goNextPage(View view) {
+    public void goButton3(View view) {
         Intent intent = new Intent(this, StartScreen.class);
         startActivity(intent);
     }
 
-    public void goPreviousPage(View view) {
+    public void goButton4(View view) {
         Intent intent = new Intent(this, StartScreen.class);
         startActivity(intent);
     }
+
+    public void goButton5(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton6(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton7(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton8(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton9(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton10(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton11(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton12(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton13(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton14(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton15(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton16(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton17(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
+    public void goButton18(View view) {
+        Intent intent = new Intent(this, StartScreen.class);
+        startActivity(intent);
+    }
+
 
 }
