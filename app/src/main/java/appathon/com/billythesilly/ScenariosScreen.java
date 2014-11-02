@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.widget.Button;
 
 import appathon.com.billythesilly.scenario.ScenarioCrossStreetActivity;
-//Line that changes color of text:     current1.setTextColor(Color.BLUE);
 
 public class ScenariosScreen extends Activity {
 
