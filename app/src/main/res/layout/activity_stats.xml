@@ -80,15 +80,19 @@
         android:src="@drawable/clothes"/>
 
     <ProgressBar
-        android:layout_width="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_toEndOf="@+id/textView"
-        android:max="20"
+        android:max="18"
         android:indeterminate="false"
-        android:layout_marginLeft="24dp"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toRightOf="@+id/textView" />
+        android:progress="0"
+        android:layout_alignBottom="@+id/StarsEarned"
+        android:layout_alignTop="@+id/StarPic"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:longClickable="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -119,5 +123,44 @@
         android:layout_alignBottom="@+id/RewardsPic"
         android:layout_toRightOf="@+id/RewardsPic"
         android:textColor="#046380"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:gravity="center"
+        android:text="Stupd"
+        android:id="@+id/Progress"
+        android:layout_below="@+id/progressBar"
+        android:layout_alignEnd="@+id/progressBar"
+        android:layout_alignStart="@id/progressBar"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BillyNormal"
+        android:src="@drawable/billy"
+        android:layout_toEndOf="@+id/StarsEarned"
+        android:layout_alignTop="@+id/Helped"
+        android:layout_toRightOf="@+id/StarsEarned"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrentBilly"
+        android:layout_toRightOf="@+id/Arrow"
+        android:layout_toEndOf="@+id/Arrow"
+        android:layout_alignTop="@+id/Helped" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Arrow"
+        android:layout_toEndOf="@+id/BillyNormal"
+        android:layout_toRightOf="@+id/BillyNormal"
+        android:layout_below="@+id/TimesHelped"
+        android:layout_alignBottom="@+id/RewardsEarned"/>
+
 
 </RelativeLayout>
