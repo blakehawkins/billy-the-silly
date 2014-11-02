@@ -33,6 +33,11 @@
             android:name="appathon.com.billythesilly.ShopActivity"
             android:label="@string/title_activity_shop"
             android:screenOrientation="landscape" />
+        <activity
+            android:name="appathon.com.billythesilly.scenario.ReactionScenarioCookieActivity"
+            android:label="@string/title_activity_reaction_scenario_cookie"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>
