@@ -97,7 +97,8 @@
                 android:paddingTop="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="0dp"
-                android:background="#00ffffff" />
+                android:background="#00ffffff"
+                android:onClick="buyEyes" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -108,7 +109,8 @@
                 android:paddingTop="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="0dp"
-                android:background="#00ffffff" />
+                android:background="#00ffffff"
+                android:onClick="buyMouth" />
 
         </LinearLayout>
 
