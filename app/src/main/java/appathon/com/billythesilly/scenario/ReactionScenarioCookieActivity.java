@@ -35,7 +35,8 @@ private int count = 0;
     protected void drawSprites(Context cxt) {
     }
 
-    public void grade(View view) {
+    public int grade(View view) {
+        return 0;
     }
 
     public void goDown(View v) {
